@@ -11,6 +11,7 @@
         android:theme="@style/Theme.EMentoring">
         <activity
             android:name=".Login"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
