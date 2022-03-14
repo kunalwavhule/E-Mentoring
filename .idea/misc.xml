@@ -3,18 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/EMentoring/app/src/main/res/drawable-v24/circle_green.xml" value="0.1" />
+        <entry key="..\:/EMentoring/app/src/main/res/drawable-v24/circle_orange.xml" value="0.1" />
+        <entry key="..\:/EMentoring/app/src/main/res/drawable-v24/ic_applicant.xml" value="0.1" />
+        <entry key="..\:/EMentoring/app/src/main/res/drawable-v24/ic_job_post.xml" value="0.1" />
+        <entry key="..\:/EMentoring/app/src/main/res/drawable-v24/ic_recruiter.xml" value="0.1" />
+        <entry key="..\:/EMentoring/app/src/main/res/drawable-v24/logout.xml" value="0.1" />
         <entry key="..\:/EMentoring/app/src/main/res/drawable/button_background.xml" value="0.19583333333333333" />
         <entry key="..\:/EMentoring/app/src/main/res/drawable/edit_background.xml" value="0.19583333333333333" />
         <entry key="..\:/EMentoring/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.18697916666666667" />
         <entry key="..\:/EMentoring/app/src/main/res/drawable/ic_logo.xml" value="0.18697916666666667" />
         <entry key="..\:/EMentoring/app/src/main/res/drawable/top_background.xml" value="0.1" />
-        <entry key="..\:/EMentoring/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.15677083333333333" />
+        <entry key="..\:/EMentoring/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.3333333333333333" />
+        <entry key="..\:/EMentoring/app/src/main/res/layout/activity_admin_mentee.xml" value="0.1796875" />
         <entry key="..\:/EMentoring/app/src/main/res/layout/activity_login.xml" value="0.3333333333333333" />
         <entry key="..\:/EMentoring/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
         <entry key="..\:/EMentoring/app/src/main/res/layout/activity_mentor_dashboard.xml" value="0.1796875" />
         <entry key="..\:/EMentoring/app/src/main/res/layout/activity_splash_screen.xml" value="0.16666666666666666" />
         <entry key="..\:/EMentoring/app/src/main/res/layout/activity_student_dashboard.xml" value="0.165625" />
         <entry key="..\:/EMentoring/app/src/main/res/layout/activity_student_dashboard2.xml" value="0.1796875" />
+        <entry key="..\:/EMentoring/app/src/main/res/menu/logout.xml" value="0.1796875" />
+        <entry key="..\:/EMentoring/app/src/main/res/menu/navigation.xml" value="0.22" />
+        <entry key="..\:/EMentoring/app/src/main/res/menu/reqruiternavigation.xml" value="0.1" />
+        <entry key="..\:/EMentoring/app/src/main/res/menu/search.xml" value="0.1796875" />
       </map>
     </option>
   </component>
@@ -27,7 +38,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.16666666666666666" />
+        <option name="scale" value="0.3333333333333333" />
       </ProjectState>
     </option>
   </component>

@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.example.e_mentoring.admin.AdminDashboard;
 import com.example.e_mentoring.mentor.MentorDashboard;
-import com.example.e_mentoring.student.StudentDashboard;
+import com.example.e_mentoring.mentee.MenteeDashboard;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -22,8 +22,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import com.google.firebase.database.FirebaseDatabase;
 
 public class Login extends AppCompatActivity {
     EditText email,password;
@@ -49,7 +47,7 @@ public class Login extends AppCompatActivity {
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     int userTypes = snapshot.getValue(Integer.class);
                     if (userTypes == 0){
-                        Intent in = new Intent(Login.this, StudentDashboard.class);
+                        Intent in = new Intent(Login.this, MenteeDashboard.class);
                         startActivity(in);
                     }
                     if (userTypes == 1){
@@ -101,7 +99,7 @@ public class Login extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             int userTypes = snapshot.getValue(Integer.class);
                             if (userTypes == 0){
-                                Intent in = new Intent(Login.this, StudentDashboard.class);
+                                Intent in = new Intent(Login.this, MenteeDashboard.class);
                                 startActivity(in);
                                 finish();
                             }
