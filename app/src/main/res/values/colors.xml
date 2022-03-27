@@ -13,4 +13,6 @@
     <color name="orange">#FF8C00</color>
     <color name="skyblue">#87CEEB</color>
     <color name="lightgray">#696969</color>
+    <color name="colorAccent">#969291</color>
+    <color name="colorPrimary">#6200EE</color>
 </resources>

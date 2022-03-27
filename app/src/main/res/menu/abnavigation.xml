@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/amentee"
+        android:icon="@drawable/ic_mentee"
+        android:title="Mentee"
+        app:showAsAction="never"/>
+    <item android:id="@+id/amentor"
+        android:icon="@drawable/ic_logo"
+        android:title="mentor"
+        app:showAsAction="never"/>
+
+>
+
+    <item android:id="@+id/aaccout"
+        android:icon="@drawable/ic_account"
+        android:title="Account Section"
+        app:showAsAction="never"/>
+    <item android:id="@+id/atpc"
+        android:icon="@drawable/ic_tpc"
+        android:title="TPC"
+        app:showAsAction="never"/>
+</menu>

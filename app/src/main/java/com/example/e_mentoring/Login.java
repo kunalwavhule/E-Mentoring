@@ -38,35 +38,6 @@ public class Login extends AppCompatActivity {
 
 
 
-        if (auth.getCurrentUser()!=null){
-
-            FirebaseUser mUser = auth.getCurrentUser();
-            String uid = mUser.getUid();
-            firebaseDatabase.getReference().child("User").child(uid).child("userTypes").addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    int userTypes = snapshot.getValue(Integer.class);
-                    if (userTypes == 0){
-                        Intent in = new Intent(Login.this, MenteeDashboard.class);
-                        startActivity(in);
-                    }
-                    if (userTypes == 1){
-                        Intent in = new Intent(Login.this, MentorDashboard.class);
-                        startActivity(in);
-                    }
-                    if (userTypes == 2){
-                        Intent in = new Intent(Login.this, AdminDashboard.class);
-                        startActivity(in);
-                    }
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
-        }
 
     }
 
