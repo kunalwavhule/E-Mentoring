@@ -15,4 +15,6 @@
     <color name="lightgray">#696969</color>
     <color name="colorAccent">#969291</color>
     <color name="colorPrimary">#6200EE</color>
+    <color name="celeste">#ffb6c1</color>
+    <color name="popster">#be4f62</color>
 </resources>

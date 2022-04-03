@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EMentoring">
         <activity
+            android:name=".admin.AdminTest"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AddMentor"
+            android:exported="false" />
+        <activity
             android:name=".admin.AddMentee"
             android:exported="false" />
         <activity

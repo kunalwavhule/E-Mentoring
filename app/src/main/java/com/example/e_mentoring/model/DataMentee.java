@@ -8,6 +8,9 @@ public class DataMentee {
     String Password;
     String MotherName;
     String Address;
+    String MobileNO;
+    String Mentee;
+    String AddYear;
     String Religion;
     String Caste;
     String Ssc;
@@ -22,6 +25,7 @@ public class DataMentee {
     public DataMentee() {
     }
 
+
     public DataMentee(String serialno, String rollNo, String fullName, String email, String password, String motherName, String address, String religion, String caste, String ssc, String hsc, String fee, String admissionType, String year, String branch, String division, String batch) {
         this.serialno = serialno;
         RollNo = rollNo;
@@ -30,6 +34,29 @@ public class DataMentee {
         Password = password;
         MotherName = motherName;
         Address = address;
+        Religion = religion;
+        Caste = caste;
+        Ssc = ssc;
+        Hsc = hsc;
+        Fee = fee;
+        AdmissionType = admissionType;
+        Year = year;
+        Branch = branch;
+        Division = division;
+        Batch = batch;
+    }
+
+    public DataMentee(String serialno, String rollNo, String fullName, String email, String password, String motherName, String address, String mobileNO, String mentee, String addYear, String religion, String caste, String ssc, String hsc, String fee, String admissionType, String year, String branch, String division, String batch) {
+        this.serialno = serialno;
+        RollNo = rollNo;
+        FullName = fullName;
+        Email = email;
+        Password = password;
+        MotherName = motherName;
+        Address = address;
+        MobileNO = mobileNO;
+        Mentee = mentee;
+        AddYear = addYear;
         Religion = religion;
         Caste = caste;
         Ssc = ssc;
@@ -176,5 +203,29 @@ public class DataMentee {
 
     public void setPassword(String password) {
         Password = password;
+    }
+
+    public String getMobileNO() {
+        return MobileNO;
+    }
+
+    public void setMobileNO(String mobileNO) {
+        MobileNO = mobileNO;
+    }
+
+    public String getMentee() {
+        return Mentee;
+    }
+
+    public void setMentee(String mentee) {
+        Mentee = mentee;
+    }
+
+    public String getAddYear() {
+        return AddYear;
+    }
+
+    public void setAddYear(String addYear) {
+        AddYear = addYear;
     }
 }

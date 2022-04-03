@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/background"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
@@ -11,22 +12,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-     <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/rbottomNavigation"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:menu="@menu/abnavigation"
-            tools:ignore="MissingConstraints">
 
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
-     <View
-            android:id="@+id/view"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Year"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <AutoCompleteTextView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/lightgray" />
+            android:layout_height="wrap_content"
+            android:id="@+id/spnsem"
+            android:inputType="none">
 
-     <LinearLayout
+        </AutoCompleteTextView>
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,7 +54,9 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
+                    android:background="@drawable/circle_orange"
                     android:padding="15dp"
+
                     android:src="@drawable/ic_cs" />
 
                 <View
@@ -82,8 +84,10 @@
             android:id="@+id/cardemployeeit"
             android:layout_width="130dp"
             android:layout_height="150dp"
+            android:onClick="adminit"
             android:layout_margin="10dp"
-            app:cardElevation="5dp">
+            app:cardElevation="5dp"
+            tools:ignore="OnClick">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -95,6 +99,7 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:padding="15dp"
+                    android:background="@drawable/circle_green"
                     android:src="@drawable/ic_it" />
 
                 <View
@@ -148,6 +153,7 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:padding="15dp"
+                    android:background="@drawable/circle_skyblue"
                     android:src="@drawable/ic_ee" />
 
                 <View
@@ -186,6 +192,7 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
+                    android:background="@drawable/circle_celeste"
                     android:padding="15dp"
                     android:src="@drawable/ic_ie" />
 
@@ -241,6 +248,7 @@
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:padding="15dp"
+                        android:background="@drawable/circle_popster"
                         android:src="@drawable/ic_ete" />
 
                     <View

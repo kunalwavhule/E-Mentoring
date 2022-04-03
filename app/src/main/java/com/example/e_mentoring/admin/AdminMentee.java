@@ -4,16 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 
-import com.example.e_mentoring.Login;
 import com.example.e_mentoring.R;
 import com.example.e_mentoring.adapter.UserAdapter;
-import com.example.e_mentoring.model.Data;
 import com.example.e_mentoring.model.DataMentee;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
@@ -42,7 +37,7 @@ public class AdminMentee extends AppCompatActivity {
                 new FirebaseRecyclerOptions.Builder<DataMentee>()
                         .setQuery(mJobPost, DataMentee.class)
                         .build();
-      userAdapter = new UserAdapter(options);
+        userAdapter = new UserAdapter(options);
         recyclerView.setAdapter(userAdapter);
 
 
@@ -57,5 +52,4 @@ public class AdminMentee extends AppCompatActivity {
         super.onStop();
         userAdapter.stopListening();
     }
-
 }

@@ -9,11 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.e_mentoring.R;
-import com.example.e_mentoring.model.DataMentee;
+import com.example.e_mentoring.model.TestModel;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-public class RegisterMenteeAdapter extends FirebaseRecyclerAdapter<DataMentee,RegisterMenteeAdapter.myViewHolder> {
+public class TestAdapter extends FirebaseRecyclerAdapter<TestModel,TestAdapter.myViewHolder> {
 
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
@@ -21,29 +21,32 @@ public class RegisterMenteeAdapter extends FirebaseRecyclerAdapter<DataMentee,Re
      *
      * @param options
      */
-    public RegisterMenteeAdapter(@NonNull FirebaseRecyclerOptions<DataMentee> options) {
+    public TestAdapter(@NonNull FirebaseRecyclerOptions<TestModel> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull DataMentee model) {
+    protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull TestModel model) {
+        holder.name.setText(model.getName());
+
 
     }
 
     @NonNull
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.csitem,parent,false);
-        return new RegisterMenteeAdapter.myViewHolder(view);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.testitem,parent,false);
+        return new TestAdapter.myViewHolder(view);
+
     }
 
-    public class myViewHolder extends RecyclerView.ViewHolder{
-        TextView rollNo, fullName,motherName,address,religion, caste, ssc, hsc, fee, admissionType;
+    public class myViewHolder extends RecyclerView.ViewHolder {
+        TextView name;
 
-        public myViewHolder(@NonNull View itemView) {
-            super(itemView);
+    public myViewHolder(@NonNull View itemView) {
+        super(itemView);
+        name = itemView.findViewById(R.id.name);
 
-        }
     }
-
+}
 }

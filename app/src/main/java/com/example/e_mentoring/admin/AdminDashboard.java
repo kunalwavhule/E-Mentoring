@@ -13,6 +13,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
 import com.example.e_mentoring.Login;
@@ -24,10 +26,21 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class AdminDashboard extends AppCompatActivity {
     FirebaseAuth auth = FirebaseAuth.getInstance();
+    String addyeares[] = {"2015","2016","2017","2018","2019","2020","2021","2022"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dashboard);
+
+        ArrayAdapter<String> addyearsAdapter = new ArrayAdapter<>(
+                this,
+                R.layout.drop_down_item,
+                addyeares
+        );
+        AutoCompleteTextView addyear = findViewById(R.id.spnsem);
+        addyear.setAdapter(addyearsAdapter);
+
 
     }
 
@@ -59,5 +72,9 @@ public class AdminDashboard extends AppCompatActivity {
     public void admincs(View view) {
         startActivity(new Intent(getApplicationContext(),AdminMentee.class));
 
+    }
+
+    public void adminit(View view) {
+        startActivity(new Intent(getApplicationContext(),AdminTest.class));
     }
 }
