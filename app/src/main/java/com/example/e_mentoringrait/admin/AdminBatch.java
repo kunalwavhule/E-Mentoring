@@ -22,7 +22,7 @@ public class AdminBatch extends AppCompatActivity {
 
     UserAdapter userAdapter1,userAdapter2,userAdapter3,userAdapter4;
     FirebaseAuth auth;
-    private DatabaseReference mMentee1,mMentee2,mMentee3,mMentee4,mJobPost;
+    private DatabaseReference mMentee1,mMentee2,mMentee3,mMentee4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
