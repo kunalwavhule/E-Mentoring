@@ -29,7 +29,7 @@ public class Register extends AppCompatActivity {
     Button btn_add_mentee;
     String branches[] = {"CS","IT","EXT","EE","IE"};
     String AccadmicYear[] = {"FE","SE","TE","BE"};
-    String divisiones[] = {"A","B","C","D","E","F","G","H","I","J","K","L","M"};
+    String divisiones[] = {"A","B","C"};
     String batches[] = {"1","2","3","4"};
     String religions[] = {"Buddhist","Cristen","Hindu","Jain","Muslim","Sikh","Other"};
     String castes[] = {"OPEN","OBC","SC","ST"};

@@ -4,12 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin.AdminDashboard">
+    tools:context=".admin.AdminDivision">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tx"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textSize="30dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,11 +31,10 @@
             tools:layout_editor_absoluteX="5dp">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/Adcs"
+                android:id="@+id/Adione"
                 android:layout_width="130dp"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
-                android:onClick="Admincs"
                 app:cardElevation="5dp"
                 tools:ignore="OnClick">
 
@@ -36,11 +44,16 @@
                     android:gravity="center"
                     android:orientation="vertical">
 
-                    <ImageView
+                    <TextView
                         android:layout_width="64dp"
+                        android:id="@+id/tvone"
                         android:layout_height="64dp"
                         android:background="@drawable/circle_popster"
-                        android:src="@drawable/ic_cs"
+                        android:text="A"
+                        android:gravity="center|center_vertical"
+                        android:textSize="25dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
                         android:padding="15dp"/>
 
                     <View
@@ -54,7 +67,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:padding="5dp"
-                        android:text="Computer\nEngineering"
+                        android:id="@+id/tvbone"
+                        android:text="Division"
+                        android:textColor="@color/black"
                         android:textStyle="bold" />
 
 
@@ -64,10 +79,10 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/Adit"
+                android:id="@+id/Aditwo"
                 android:layout_width="130dp"
                 android:layout_height="150dp"
-                android:onClick="Adminit"
+                android:onClick="Admintwo"
                 android:layout_margin="10dp"
                 app:cardElevation="5dp"
                 tools:ignore="OnClick">
@@ -78,13 +93,17 @@
                     android:gravity="center"
                     android:orientation="vertical">
 
-                    <ImageView
+                    <TextView
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:padding="15dp"
-                        android:src="@drawable/ic_it"
-                        android:background="@drawable/circle_skyblue"/>
-
+                        android:background="@drawable/circle_skyblue"
+                        android:text="B"
+                        android:id="@+id/tvtwo"
+                        android:gravity="center|center_vertical"
+                        android:textSize="25dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:padding="15dp"/>
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
@@ -96,7 +115,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:padding="5dp"
-                        android:text="Information\nTechnology"
+                        android:id="@+id/tvbtwo"
+                        android:text="Division"
                         android:textStyle="bold" />
 
 
@@ -116,53 +136,12 @@
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="5dp">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/Adee"
-                android:layout_width="130dp"
-                android:layout_height="150dp"
-                android:layout_margin="10dp"
-                android:onClick="Adminee"
-                app:cardElevation="5dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:src="@drawable/ic_ee"
-                        android:background="@drawable/circle_celeste"
-                        android:padding="15dp" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@color/lightgray" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:padding="5dp"
-                        android:text="Electrical\nEngineering"
-
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/Adie"
+                android:id="@+id/Adithree"
                 android:layout_width="130dp"
                 android:layout_height="150dp"
-                android:onClick="Adminie"
+                android:onClick="Adminthree"
                 android:layout_margin="10dp"
                 app:cardElevation="5dp"
                 tools:ignore="OnClick">
@@ -173,13 +152,17 @@
                     android:gravity="center"
                     android:orientation="vertical">
 
-                    <ImageView
+                    <TextView
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:padding="15dp"
-                        android:src="@drawable/ic_ie"
-                        android:background="@drawable/circle_green" />
-
+                        android:background="@drawable/circle_orange"
+                        android:text="C"
+                        android:id="@+id/tvthree"
+                        android:gravity="center|center_vertical"
+                        android:textSize="25dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:padding="15dp"/>
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
@@ -191,7 +174,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:padding="5dp"
-                        android:text="Instrumentation\nEngineering"
+                        android:id="@+id/tvbthree"
+                        android:text="Division"
                         android:textStyle="bold" />
 
 
@@ -199,63 +183,6 @@
 
 
             </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-
-        <LinearLayout
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:paddingTop="20dp"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="5dp">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/Adete"
-                android:layout_width="130dp"
-                android:layout_height="150dp"
-                android:onClick="Adminete"
-                android:layout_margin="10dp"
-                app:cardElevation="5dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:src="@drawable/ic_ete"
-                      android:background="@drawable/circle_orange"
-                        android:padding="15dp" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@color/lightgray" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:padding="5dp"
-                        android:text="Electronic and\nTelecomunication \nEngineering"
-
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
-
-
 
         </LinearLayout>
 

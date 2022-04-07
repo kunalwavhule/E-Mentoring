@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EMentoringRAIT">
         <activity
+            android:name=".admin.AdminBatch"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AdminDivision"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AdminYear"
+            android:exported="false" />
+        <activity
             android:name=".Register"
             android:exported="false" />
         <activity
