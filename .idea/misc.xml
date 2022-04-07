@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/drawable/button_background.xml" value="0.1" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/drawable/circle_skyblue.xml" value="0.183" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/drawable/drop_down_item.xml" value="0.1" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/drawable/dropdownitem.xml" value="0.1" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/drawable/edit_background.xml" value="0.1705" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/drawable/ic_logo.xml" value="0.156" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.1796875" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_forget_password.xml" value="0.1" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_main.xml" value="0.16893115942028986" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_mentee_dashboard.xml" value="0.1" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_mentor_dashboard.xml" value="0.20985401459854014" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/drop_down_item.xml" value="0.1796875" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/test.xml" value="0.1796875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
