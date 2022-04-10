@@ -11,21 +11,23 @@
         <entry key="..\:/EMentoringRAIT/app/src/main/res/drawable/edit_background.xml" value="0.1705" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/drawable/ic_it.xml" value="0.1545" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/drawable/ic_logo.xml" value="0.156" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_add_mentor.xml" value="0.1" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_admin_batch.xml" value="0.1796875" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.1796875" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_admin_division.xml" value="0.1796875" />
-        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_admin_mentee.xml" value="0.1" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_admin_mentee.xml" value="0.25" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_admin_year.xml" value="0.1796875" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_forget_password.xml" value="0.1" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_main.xml" value="0.16893115942028986" />
-        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_mentee_dashboard.xml" value="0.1" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_mentee_dashboard.xml" value="0.22" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_mentor_dashboard.xml" value="0.20985401459854014" />
-        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/batchitem.xml" value="0.1796875" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/drop_down_item.xml" value="0.1796875" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/test.xml" value="0.1796875" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/menu/mbnavigation.xml" value="0.1796875" />
       </map>
     </option>
   </component>

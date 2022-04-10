@@ -44,7 +44,18 @@ public class UserAdapter extends FirebaseRecyclerAdapter<DataMentee,UserAdapter.
             public void onClick(View v) {
 
                 Intent intent = new Intent(context, AdminMentee.class);
-                intent.putExtra("abc",model.getFullName());
+                intent.putExtra("fullname",model.getFullName());
+                intent.putExtra("mobileno",model.getStudentNumber());
+                intent.putExtra("email",model.getEmail());
+                intent.putExtra("branch",model.getBranch());
+                intent.putExtra("rollno",model.getRollNo());
+                intent.putExtra("religion",model.getReligion());
+                intent.putExtra("caste",model.getCaste());
+                intent.putExtra("accadmicyear",model.getAccadmicYear());
+                intent.putExtra("division",model.getDivision());
+
+
+
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
