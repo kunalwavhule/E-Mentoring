@@ -4,11 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
+import com.example.e_mentoringrait.AddMentor;
+import com.example.e_mentoringrait.Login;
 import com.example.e_mentoringrait.R;
+import com.example.e_mentoringrait.Register;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class AdminDashboard extends AppCompatActivity {
+    FirebaseAuth auth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,5 +56,39 @@ public class AdminDashboard extends AppCompatActivity {
         i.putExtra("adb","ETE");
         startActivity(i);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.adminmenu,menu);
+        MenuItem logout = menu.findItem(R.id.logout);
+        MenuItem addmentee = menu.findItem(R.id.addmentee);
+        MenuItem addmentor = menu.findItem(R.id.addmentor);
+
+        addmentee.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                startActivity(new Intent(getApplicationContext(), Register.class));
+                return false;
+            }
+        });
+        addmentor.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                startActivity(new Intent(getApplicationContext(), AddMentor.class));
+                return false;
+            }
+        });
+
+        logout.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                auth.signOut();
+                startActivity(new Intent(getApplicationContext(), Login.class));
+                finish();
+                return false;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
     }
 }

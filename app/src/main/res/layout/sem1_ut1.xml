@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="Enter Mark Applied Mathematic"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:id="@+id/subName1"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="Enter Mark Applied Physics-1"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:id="@+id/subName2"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="Enter Mark Applied Chemisty-1"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:id="@+id/subName3"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="Enter Mark Engineering Mechanics"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:id="@+id/subName4"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="Enter Mark Basic Electrical Engineering"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:id="@+id/subName5"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="Enter Mark Environment Studies"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:id="@+id/subName6"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/submit"/>
+    </LinearLayout>
+
+</RelativeLayout>

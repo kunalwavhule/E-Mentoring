@@ -11,14 +11,12 @@ import android.widget.TextView;
 import com.example.e_mentoringrait.R;
 
 public class AdminDivision extends AppCompatActivity {
-    TextView textView;
     CardView Adone,Adtwo,Adthree;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_division);
-        textView = findViewById(R.id.tx);
 
         Adone = findViewById(R.id.Adione);
         Adtwo = findViewById(R.id.Aditwo);
@@ -61,12 +59,7 @@ public class AdminDivision extends AppCompatActivity {
                 iy.putExtra("branch",vb);
                 iy.putExtra("division","C");
                 startActivity(iy);
-
             }
         });
-
     }
-
-
-
 }

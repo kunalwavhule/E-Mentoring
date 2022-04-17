@@ -15,18 +15,23 @@
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_admin_batch.xml" value="0.1796875" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.1796875" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_admin_division.xml" value="0.1796875" />
-        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_admin_mentee.xml" value="0.25" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_admin_mentee.xml" value="0.22" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_admin_year.xml" value="0.1796875" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_forget_password.xml" value="0.1" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_main.xml" value="0.16893115942028986" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_mentee_dashboard.xml" value="0.22" />
-        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_mentor_dashboard.xml" value="0.20985401459854014" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_mentee_profile.xml" value="0.1796875" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_mentor_batch_one.xml" value="0.1796875" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_mentor_dashboard.xml" value="0.22" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_sem1.xml" value="0.1" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/batchitem.xml" value="0.1796875" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/drop_down_item.xml" value="0.1796875" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/sem1_ut1.xml" value="0.1" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/test.xml" value="0.1796875" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/menu/adminmenu.xml" value="0.1796875" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/menu/mbnavigation.xml" value="0.1796875" />
       </map>
     </option>
@@ -36,5 +41,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.3333333333333333" />
+      </ProjectState>
+    </option>
   </component>
 </project>

@@ -3,6 +3,7 @@ package com.example.e_mentoringrait;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.e_mentoringrait.admin.AdminDashboard;
 import com.example.e_mentoringrait.model.DataMentor;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -302,6 +304,7 @@ public class AddMentor extends AppCompatActivity {
                         mRef.child(mentor_branch).child(mentee_accadmicYears4).child(mentee_divisions4).child(mentee_batches4).child("mentor").child(id).setValue(dataMentor1);
                         Toast.makeText(getApplicationContext(),"Add Mentor Successfully",Toast.LENGTH_LONG).show();
 
+                        startActivity(new Intent(getApplicationContext(), AdminDashboard.class));
 
                     }
                 }).addOnFailureListener(new OnFailureListener() {

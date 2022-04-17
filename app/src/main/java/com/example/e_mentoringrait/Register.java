@@ -43,6 +43,7 @@ public class Register extends AppCompatActivity {
     private DatabaseReference mRef = mDatabase.getReference();
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -276,7 +277,7 @@ public class Register extends AppCompatActivity {
 
 
                        Toast.makeText(getApplicationContext(),"Add Mentee Successfully",Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(getApplicationContext(), Login.class));
+                        startActivity(new Intent(getApplicationContext(), AdminDashboard.class));
                         finish();
 
                     }

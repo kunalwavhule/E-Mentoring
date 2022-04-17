@@ -13,6 +13,7 @@
     <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="50dp">
+
     <ImageButton
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -34,9 +35,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 </RelativeLayout>
 </androidx.cardview.widget.CardView>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -156,8 +158,311 @@
                         android:layout_height="wrap_content"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/popster"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:text="Sem1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_background"
+                android:gravity="center"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_weight="3"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:id="@+id/subName"
+                        android:text="Subject name"/>
+                    <TextView
+                        android:id="@+id/sm1ut1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:inputType="number"
+                        android:hint="UT 1" />
+                    <TextView
+                        android:id="@+id/sem1ut2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:inputType="number"
+                        android:hint="UT 2" />
+                    <TextView
+                        android:id="@+id/sem1fl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:inputType="number"
+                        android:hint="Final Mark" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_background"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_weight="3"
+                        android:textSize="12dp"
+                        android:gravity="center"
+                        android:id="@+id/sN1"
+
+                        android:text="Applied Mathematic"/>
+                    <TextView
+                        android:id="@+id/sb1ut1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:layout_weight="2"
+                        android:inputType="number" />
+                    <TextView
+                        android:id="@+id/sb1ut2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="0"
+                        android:inputType="number" />
+                    <TextView
+                        android:id="@+id/sb1fl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="0"
+                        android:inputType="number" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="@drawable/edit_background"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_weight="3"
+                        android:textSize="12dp"
+                        android:gravity="center"
+                        android:id="@+id/sN2"
+                        android:text="Applied Physics-1"/>
+                    <TextView
+                        android:id="@+id/sb2ut1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="NA"
+                        android:text="0"
+                        android:inputType="number" />
+                    <TextView
+                        android:id="@+id/sb2ut2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="NA"
+                        android:inputType="number" />
+                    <TextView
+                        android:id="@+id/sb2fl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="NA"
+                        android:inputType="number" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_background"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_weight="3"
+                        android:textSize="12dp"
+                        android:gravity="center"
+                        android:id="@+id/sN3"
+                        android:text="Applied Chemisty-1"/>
+                    <TextView
+                        android:id="@+id/sb3ut1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="NA"
+                        android:text="0"
+                        android:inputType="number" />
+                    <TextView
+                        android:id="@+id/sb3ut2"
+                        android:text="0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="NA"
+                        android:inputType="number" />
+                    <TextView
+                        android:id="@+id/sb3fl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="NA"
+                        android:inputType="number" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_background"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:textSize="12dp"
+                        android:id="@+id/sN4"
+                        android:text="Engineering Mechanics"/>
+                    <TextView
+                        android:id="@+id/sb4ut1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="NA"
+                        android:text="0"
+                        android:inputType="number" />
+                    <TextView
+                        android:id="@+id/sb4ut2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="NA"
+                        android:text="0"
+                        android:inputType="number" />
+                    <TextView
+                        android:id="@+id/sb4fl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="NA"
+                        android:inputType="number" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_background"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_weight="3"
+                        android:textSize="12dp"
+                        android:gravity="center"
+                        android:id="@+id/sN5"
+                        android:text="Basic Electrical Engineering"/>
+                    <TextView
+                        android:id="@+id/sb5ut1"
+                        android:text="0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="NA"
+                        android:inputType="number" />
+                    <TextView
+                        android:id="@+id/sb5ut2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="NA"
+                        android:inputType="number" />
+                    <TextView
+                        android:id="@+id/sb5fl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="NA"
+                        android:inputType="number" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_background"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_weight="3"
+                        android:textSize="12dp"
+                        android:gravity="center"
+                        android:id="@+id/sN6"
+                        android:text="Environment Studies"/>
+                    <TextView
+                        android:id="@+id/sb6ut1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="NA"
+                        android:text="0"
+                        android:inputType="number" />
+                    <TextView
+                        android:id="@+id/sb6ut2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="NA"
+                        android:inputType="number" />
+                    <TextView
+                        android:id="@+id/sb6fl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="NA"
+                        android:inputType="number" />
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:background="@color/popster"
+                android:layout_height="1dp"/>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="50dp"
+                android:id="@+id/linechart"/>
+
+
         </LinearLayout>
 
     </ScrollView>
+
 
 </LinearLayout>
