@@ -5,10 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.e_mentoringrait.AddMentor;
+import com.example.e_mentoringrait.Login;
 import com.example.e_mentoringrait.R;
+import com.example.e_mentoringrait.Register;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -48,5 +52,22 @@ public class MenteeDashboard extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menteemenu,menu);
+        MenuItem logout = menu.findItem(R.id.logout);
+
+        logout.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                auth.signOut();
+                startActivity(new Intent(getApplicationContext(), Login.class));
+                finish();
+                return false;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
     }
 }
