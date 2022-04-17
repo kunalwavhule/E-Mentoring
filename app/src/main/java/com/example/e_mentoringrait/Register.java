@@ -268,11 +268,11 @@ public class Register extends AppCompatActivity {
                                 mentee_rollNo,mentee_fullName,mentee_email,
                                 mentee_password,mentee_motherName,mentee_address,mentee_studentNumber,mentee_parentNumber,mentee_admissionYear,
                                 mentee_ssc,mentee_hsc,mentee_fee,mentee_religions,mentee_caste,mentee_admissionType);
-                        DataMentee dataMentee1 = new DataMentee(id,0,mentee_branch,mentee_year,
+                        /*DataMentee dataMentee1 = new DataMentee(id,0,mentee_branch,mentee_year,
                                 mentee_division, mentee_batch,
-                                mentee_rollNo,mentee_fullName,mentee_email);
+                                mentee_rollNo,mentee_fullName,mentee_email);*/
 
-                        mRef.child("User").child(id).setValue(dataMentee1);
+                        mRef.child("User").child(id).setValue(dataMentee);
                         mRef.child(mentee_branch).child(mentee_year).child(mentee_division).child(mentee_batch).child(id).setValue(dataMentee);
 
 
