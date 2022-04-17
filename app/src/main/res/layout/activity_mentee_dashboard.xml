@@ -10,7 +10,9 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -83,7 +85,6 @@
                         android:layout_width="150dp"
                         android:layout_height="150dp"
                         android:layout_margin="10dp"
-                        android:onClick="Adminit"
                         app:cardElevation="5dp"
                         tools:ignore="OnClick">
 
@@ -143,7 +144,6 @@
                         android:layout_width="150dp"
                         android:layout_height="150dp"
                         android:layout_margin="10dp"
-                        android:onClick="Admincs"
                         app:cardElevation="5dp"
                         tools:ignore="OnClick">
 
