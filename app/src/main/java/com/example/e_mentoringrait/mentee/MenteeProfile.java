@@ -3,10 +3,14 @@ package com.example.e_mentoringrait.mentee;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.e_mentoringrait.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -59,6 +63,39 @@ public class MenteeProfile extends AppCompatActivity {
             }
         };
         mDatabase.addValueEventListener(postListener);
+
+        //Bottom Navigation
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
+       // bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.profile);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch(item.getItemId()){
+                    case R.id.notes:
+                        Toast.makeText(getApplicationContext(),"Its the Notes",Toast.LENGTH_SHORT).show();
+                        overridePendingTransition(0,0);
+                        return true;
+              //      case R.id.home:
+                    case R.id.profile:
+                        return true;
+                    case R.id.chat:
+                        Toast.makeText(getApplicationContext(),"Its the Chat",Toast.LENGTH_SHORT).show();
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.notification:
+                        Toast.makeText(getApplicationContext(),"Its the Notification",Toast.LENGTH_SHORT).show();                        overridePendingTransition(0,0);
+                        return true;
+                  //  case R.id.profile:
+                    case R.id.home:
+                        startActivity(new Intent(getApplicationContext(),MenteeDashboard.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
 
     }
 }
