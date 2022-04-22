@@ -10,7 +10,14 @@
         android:title="Add Mentor" />
 
     <item
+        android:id="@+id/addlecture"
+        android:title="Assign Lecture" />
+
+    <item
         android:id="@+id/logout"
         android:title="Logout" />
+    <item
+        android:id="@+id/about"
+        android:title="About" />
 
 </menu>

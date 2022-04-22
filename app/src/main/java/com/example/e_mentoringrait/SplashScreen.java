@@ -62,7 +62,7 @@ public class SplashScreen extends AppCompatActivity {
             logo.setAnimation(top);
             slogan.setAnimation(bottom);
 
-            Intent i = new Intent(SplashScreen.this,MainActivity.class);
+            Intent i = new Intent(SplashScreen.this,Login.class);
             startActivity(i);
             finish();
 

@@ -68,7 +68,6 @@ public class MenteeProfile extends AppCompatActivity {
 
         //Bottom Navigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
-       // bottomNavigationView.setSelectedItemId(R.id.home);
         bottomNavigationView.setSelectedItemId(R.id.profile);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -78,7 +77,6 @@ public class MenteeProfile extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"Its the Notes",Toast.LENGTH_SHORT).show();
                         overridePendingTransition(0,0);
                         return true;
-              //      case R.id.home:
                     case R.id.profile:
                         return true;
                     case R.id.chat:
@@ -89,7 +87,6 @@ public class MenteeProfile extends AppCompatActivity {
                     case R.id.notification:
                         Toast.makeText(getApplicationContext(),"Its the Notification",Toast.LENGTH_SHORT).show();                        overridePendingTransition(0,0);
                         return true;
-                  //  case R.id.profile:
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext(),MenteeDashboard.class));
                         overridePendingTransition(0,0);

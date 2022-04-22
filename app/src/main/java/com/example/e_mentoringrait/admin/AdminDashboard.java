@@ -64,6 +64,7 @@ public class AdminDashboard extends AppCompatActivity {
         MenuItem logout = menu.findItem(R.id.logout);
         MenuItem addmentee = menu.findItem(R.id.addmentee);
         MenuItem addmentor = menu.findItem(R.id.addmentor);
+        MenuItem addlecture = menu.findItem(R.id.addlecture);
 
         addmentee.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
@@ -76,6 +77,13 @@ public class AdminDashboard extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 startActivity(new Intent(getApplicationContext(), AddMentor.class));
+                return false;
+            }
+        });
+        addlecture.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                startActivity(new Intent(getApplicationContext(), AdminCalendar.class));
                 return false;
             }
         });

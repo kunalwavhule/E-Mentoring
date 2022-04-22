@@ -5,36 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".admin.AdminMentee">
-<androidx.cardview.widget.CardView
-    android:layout_width="match_parent"
-    android:background="@color/popster"
-    android:layout_height="wrap_content">
-    <RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="50dp">
-
-    <ImageButton
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@color/popster"
-        android:src="@drawable/ic_baseline_back_24"
-        android:id="@+id/back"/>
-    <TextView
-        android:id="@+id/t1"
+    tools:context=".mentor.MentorBatchOne">
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Name"
-        android:layout_toRightOf="@+id/back"
         android:background="@color/popster"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</RelativeLayout>
-</androidx.cardview.widget.CardView>
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/popster"
+                android:src="@drawable/ic_baseline_back_24"
+                android:id="@+id/back"/>
+            <TextView
+                android:id="@+id/t1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Name"
+                android:layout_toRightOf="@+id/back"
+                android:background="@color/popster"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -67,15 +67,15 @@
                     android:layout_width="match_parent"
                     android:orientation="vertical"
                     android:layout_height="match_parent">
-                <TextView
-                    android:id="@+id/StudentNumberam"
-                    android:layout_width="match_parent"
-                    android:drawableLeft="@drawable/ic_phone"
-                    android:drawablePadding="20dp"
-                    android:text="8668306104"
-                    android:gravity="center"
-                    android:layout_marginBottom="25dp"
-                    android:layout_height="30sp"/>
+                    <TextView
+                        android:id="@+id/StudentNumberam"
+                        android:layout_width="match_parent"
+                        android:drawableLeft="@drawable/ic_phone"
+                        android:drawablePadding="20dp"
+                        android:text="8668306104"
+                        android:gravity="center"
+                        android:layout_marginBottom="25dp"
+                        android:layout_height="30sp"/>
                     <TextView
                         android:id="@+id/Emailam"
                         android:layout_width="match_parent"
@@ -458,306 +458,6 @@
                 android:layout_marginRight="50dp"
                 android:layout_marginTop="50dp"
                 android:id="@+id/linechart"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/popster"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:text="Sem2"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edit_background"
-                android:gravity="center"
-                android:layout_margin="20dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_weight="3"
-                        android:textSize="15dp"
-                        android:gravity="center"
-                        android:id="@+id/subName2"
-                        android:text="Subject name"/>
-                    <TextView
-                        android:id="@+id/sm2ut1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:inputType="number"
-                        android:hint="UT 1" />
-                    <TextView
-                        android:id="@+id/sem2ut2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:inputType="number"
-                        android:hint="UT 2" />
-                    <TextView
-                        android:id="@+id/sem2fl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:inputType="number"
-                        android:hint="Final Mark" />
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edit_background"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_weight="3"
-                        android:textSize="12dp"
-                        android:gravity="center"
-                        android:id="@+id/stsN1"
-                        android:text="Applied Mathematic 2"/>
-                    <TextView
-                        android:id="@+id/stsb1ut1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0"
-                        android:layout_weight="2"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/stsb1ut2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:text="0"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/stsb1fl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:text="0"
-                        android:inputType="number" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:background="@drawable/edit_background"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_weight="3"
-                        android:textSize="12dp"
-                        android:gravity="center"
-                        android:id="@+id/stsN2"
-                        android:text="Applied Physics-2"/>
-                    <TextView
-                        android:id="@+id/stsb2ut1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:text="0"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/stsb2ut2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/stsb2fl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:inputType="number" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edit_background"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_weight="3"
-                        android:textSize="12dp"
-                        android:gravity="center"
-                        android:id="@+id/stsN3"
-                        android:text="Applied Chemisty-2"/>
-                    <TextView
-                        android:id="@+id/stsb3ut1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:text="0"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/stsb3ut2"
-                        android:text="0"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/stsb3fl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:inputType="number" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edit_background"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_weight="3"
-                        android:gravity="center"
-                        android:textSize="12dp"
-                        android:id="@+id/stsN4"
-                        android:text="Engineering Drawing"/>
-                    <TextView
-                        android:id="@+id/stsb4ut1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:text="0"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/stsb4ut2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:text="0"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/stsb4fl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:inputType="number" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edit_background"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_weight="3"
-                        android:textSize="12dp"
-                        android:gravity="center"
-                        android:id="@+id/stsN5"
-                        android:text="Structural Programming Approach"/>
-                    <TextView
-                        android:id="@+id/stsb5ut1"
-                        android:text="0"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/stsb5ut2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/stsb5fl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:inputType="number" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edit_background"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_weight="3"
-                        android:textSize="12dp"
-                        android:gravity="center"
-                        android:id="@+id/stsN6"
-                        android:text="Communication Skill"/>
-                    <TextView
-                        android:id="@+id/stsb6ut1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:text="0"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/stsb6ut2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/stsb6fl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:inputType="number" />
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:background="@color/popster"
-                android:layout_height="1dp"/>
-
-            <com.github.mikephil.charting.charts.LineChart
-                android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:layout_marginTop="50dp"
-                android:id="@+id/linechart2"/>
 
 
         </LinearLayout>

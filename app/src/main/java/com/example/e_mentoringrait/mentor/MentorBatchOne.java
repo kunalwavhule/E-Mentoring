@@ -5,10 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.e_mentoringrait.Login;
 import com.example.e_mentoringrait.R;
+import com.example.e_mentoringrait.adapter.MentorBatchOneAdapter;
 import com.example.e_mentoringrait.adapter.UserAdapter;
 import com.example.e_mentoringrait.model.DataMentee;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -22,11 +27,9 @@ import com.google.firebase.database.ValueEventListener;
 public class MentorBatchOne extends AppCompatActivity {
     RecyclerView rv;
 
-    UserAdapter userAdapter;
-    FirebaseAuth auth;
+    MentorBatchOneAdapter mentorBatchOneAdapter;
+    FirebaseAuth auth = FirebaseAuth.getInstance();
     private DatabaseReference mMentor;
-    String branch,year,division,batch;
-    TextView branch1,year1,division1,batch1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,52 +37,48 @@ public class MentorBatchOne extends AppCompatActivity {
         setContentView(R.layout.activity_mentor_batch_one);
         rv = findViewById(R.id.mbrc);
         rv.setLayoutManager(new LinearLayoutManager(this));
-        auth = FirebaseAuth.getInstance();
         mMentor = FirebaseDatabase.getInstance().getReference();
-        branch1 = findViewById(R.id.textView);
-        year1 = findViewById(R.id.textView2);
-        division1 = findViewById(R.id.textView3);
-        batch1 = findViewById(R.id.textView4);
 
+        Intent intent = getIntent();
+        final String branch = intent.getStringExtra("branch");
+        final String year = intent.getStringExtra("year");
+        final String division = intent.getStringExtra("division");
+        final String batch = intent.getStringExtra("batch");
 
-        ValueEventListener postListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                year  = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("accadmicYear1").getValue(String.class);
-                batch = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("batch1").getValue(String.class);
-                division = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("division1").getValue(String.class);
-                branch = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("branch").getValue(String.class);
-                year1.setText(year);
-                batch1.setText(batch);
-                division1.setText(division);
-                branch1.setText(branch);
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-            }
-        };
-
-        mMentor.addValueEventListener(postListener);
-        mMentor = FirebaseDatabase.getInstance().getReference().child(branch1.getText().toString()).child(year1.getText().toString()).child(division1.getText().toString()).child(batch1.getText().toString());
+        mMentor = FirebaseDatabase.getInstance().getReference().child(branch).child(year).child(division).child(batch);
         FirebaseRecyclerOptions<DataMentee> options =
                 new FirebaseRecyclerOptions.Builder<DataMentee>()
                         .setQuery(mMentor, DataMentee.class)
                         .build();
-        userAdapter = new UserAdapter(options);
-        rv.setAdapter(userAdapter);
-
-
-
+        mentorBatchOneAdapter = new MentorBatchOneAdapter(options);
+        rv.setAdapter(mentorBatchOneAdapter);
 
     }
     @Override
     protected void onStart() {
         super.onStart();
-        userAdapter.startListening();
+        mentorBatchOneAdapter.startListening();
             }
     @Override
     protected void onStop() {
         super.onStop();
-        userAdapter.stopListening();
+        mentorBatchOneAdapter.stopListening();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menteemenu,menu);
+        MenuItem logout = menu.findItem(R.id.logout);
+
+        logout.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                auth.signOut();
+                startActivity(new Intent(getApplicationContext(), Login.class));
+                finish();
+                return false;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
     }
 }

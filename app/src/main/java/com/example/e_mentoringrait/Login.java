@@ -98,6 +98,6 @@ public class Login extends AppCompatActivity {
     }
 
     public void ForgetPassword(View view) {
-        startActivity(new Intent(getApplicationContext(),AddMentor.class));
+        startActivity(new Intent(getApplicationContext(),ForgetPassword.class));
     }
 }

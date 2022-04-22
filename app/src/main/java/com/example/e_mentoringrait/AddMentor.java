@@ -116,13 +116,6 @@ public class AddMentor extends AppCompatActivity {
         AutoCompleteTextView batches2 = findViewById(R.id.spnBatch2);
         batches2.setAdapter(batchAdapter2);
 
-
-
-
-
-
-
-
         ArrayAdapter<String> yearAdapter3 = new ArrayAdapter<>(
                 this,
                 R.layout.drop_down_item,
@@ -298,10 +291,10 @@ public class AddMentor extends AppCompatActivity {
                         DataMentor dataMentor1 = new DataMentor(id,1,mentor_Name,mentor_Email,mentor_branch);
                         DataMentor dataMentor = new DataMentor(id,1,mentor_Name,mentor_Email,mentor_Password,mentor_branch,mentee_accadmicYears1,mentee_divisions1,mentee_batches1,mentee_accadmicYears2,mentee_divisions2,mentee_batches2,mentee_accadmicYears3,mentee_divisions3,mentee_batches3,mentee_accadmicYears4,mentee_divisions4,mentee_batches4);
                         mRef.child("User").child(id).setValue(dataMentor);
-                        mRef.child(mentor_branch).child(mentee_accadmicYears1).child(mentee_divisions1).child(mentee_batches1).child("mentor").child(id).setValue(dataMentor1);
-                        mRef.child(mentor_branch).child(mentee_accadmicYears2).child(mentee_divisions2).child(mentee_batches2).child("mentor").child(id).setValue(dataMentor1);
-                        mRef.child(mentor_branch).child(mentee_accadmicYears3).child(mentee_divisions3).child(mentee_batches3).child("mentor").child(id).setValue(dataMentor1);
-                        mRef.child(mentor_branch).child(mentee_accadmicYears4).child(mentee_divisions4).child(mentee_batches4).child("mentor").child(id).setValue(dataMentor1);
+                        mRef.child("mentor").child(mentor_branch).child(mentee_accadmicYears1).child(mentee_divisions1).child(mentee_batches1).setValue(dataMentor1);
+                        mRef.child("mentor").child(mentor_branch).child(mentee_accadmicYears2).child(mentee_divisions2).child(mentee_batches2).setValue(dataMentor1);
+                        mRef.child("mentor").child(mentor_branch).child(mentee_accadmicYears3).child(mentee_divisions3).child(mentee_batches3).setValue(dataMentor1);
+                        mRef.child("mentor").child(mentor_branch).child(mentee_accadmicYears4).child(mentee_divisions4).child(mentee_batches4).setValue(dataMentor1);
                         Toast.makeText(getApplicationContext(),"Add Mentor Successfully",Toast.LENGTH_LONG).show();
 
                         startActivity(new Intent(getApplicationContext(), AdminDashboard.class));

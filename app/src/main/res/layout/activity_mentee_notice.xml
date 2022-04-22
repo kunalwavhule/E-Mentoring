@@ -2,24 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".mentor.MentorBatchOne">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:gravity="center"
-        android:textSize="25dp"
-        android:text="Batch"/>
-
+    tools:context=".mentee.MenteeNotice">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mbrc"
+        android:id="@+id/rvNotice"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-    </androidx.recyclerview.widget.RecyclerView>
-
+        android:layout_height="match_parent" />
 </LinearLayout>

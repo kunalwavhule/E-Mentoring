@@ -10,11 +10,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EMentoringRAIT">
         <activity
+            android:name=".mentor.MentorPostNotice"
+            android:exported="false" />
+        <activity
+            android:name=".mentee.MenteeNotice"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AdminCalendar"
+            android:exported="false" />
+        <activity
+            android:name=".mentee.MenteeCalendar"
+            android:exported="false" />
+        <activity
+            android:name=".mentor.MentorBatchTwo"
+            android:exported="false" />
+        <activity
+            android:name=".mentor.MentorMentee"
+            android:exported="false" />
+        <activity
             android:name=".mentee.MenteeProfile"
             android:exported="false" />
         <activity
             android:name=".mentor.MentorBatchOne"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".mentor.MentorDashboard" />
         <activity
             android:name=".AddMentor"
             android:exported="false" />
@@ -50,9 +69,6 @@
             android:name=".Login"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
         <activity
             android:name=".SplashScreen"
             android:exported="true"

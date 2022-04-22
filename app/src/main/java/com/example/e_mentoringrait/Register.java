@@ -268,7 +268,7 @@ public class Register extends AppCompatActivity {
                                 mentee_rollNo,mentee_fullName,mentee_email,
                                 mentee_password,mentee_motherName,mentee_address,mentee_studentNumber,mentee_parentNumber,mentee_admissionYear,
                                 mentee_ssc,mentee_hsc,mentee_fee,mentee_religions,mentee_caste,mentee_admissionType);
-                        /*DataMentee dataMentee1 = new DataMentee(id,0,mentee_branch,mentee_year,
+                          /*DataMentee dataMentee1 = new DataMentee(id,0,mentee_branch,mentee_year,
                                 mentee_division, mentee_batch,
                                 mentee_rollNo,mentee_fullName,mentee_email);*/
 
