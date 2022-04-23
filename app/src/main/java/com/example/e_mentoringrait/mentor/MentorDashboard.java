@@ -29,7 +29,7 @@ public class MentorDashboard extends AppCompatActivity {
     DatabaseReference mDatabase = database.getReference();
     TextView branch1,year1,division1,batch01,branch2,year2,division2,batch02,
             branch3,year3,division3,batch03,
-            branch4,year4,division4,batch04;
+            branch4,year4,division4,batch04,MentorName;
 
 
 
@@ -42,6 +42,7 @@ public class MentorDashboard extends AppCompatActivity {
         batch2 = findViewById(R.id.batch2);
         batch3 = findViewById(R.id.batch3);
         batch4 = findViewById(R.id.batch4);
+        MentorName = findViewById(R.id.MentorName);
 
         getSupportActionBar().setTitle("Mentor DashBoard");
 
@@ -90,6 +91,8 @@ public class MentorDashboard extends AppCompatActivity {
                 String syear4 = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("accadmicYear4").getValue(String.class);
                 String sdivision4 = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("division4").getValue(String.class);
                 String sbatch4 = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("batch4").getValue(String.class);
+                String mentorName = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("mentorName").getValue(String.class);
+
 
                 branch1.setText(branch);
                 year1.setText(year);
@@ -110,6 +113,7 @@ public class MentorDashboard extends AppCompatActivity {
                 year4.setText(syear4);
                 division4.setText(sdivision4);
                 batch04.setText(sbatch4);
+                MentorName.setText(mentorName);
             }
 
             @Override
@@ -129,6 +133,7 @@ public class MentorDashboard extends AppCompatActivity {
                 i.putExtra("year",year1.getText().toString());
                 i.putExtra("division",division1.getText().toString());
                 i.putExtra("batch",batch01.getText().toString());
+                i.putExtra("name",MentorName.getText().toString());
                 startActivity(i);
             }
         });
@@ -140,6 +145,7 @@ public class MentorDashboard extends AppCompatActivity {
                 i.putExtra("year",year2.getText().toString());
                 i.putExtra("division",division2.getText().toString());
                 i.putExtra("batch",batch02.getText().toString());
+                i.putExtra("name",MentorName.getText().toString());
                 startActivity(i);
             }
         });
@@ -151,6 +157,7 @@ public class MentorDashboard extends AppCompatActivity {
                 i.putExtra("year",year3.getText().toString());
                 i.putExtra("division",division3.getText().toString());
                 i.putExtra("batch",batch03.getText().toString());
+                i.putExtra("name",MentorName.getText().toString());
                 startActivity(i);
             }
         });
@@ -162,6 +169,7 @@ public class MentorDashboard extends AppCompatActivity {
                 i.putExtra("year",year4.getText().toString());
                 i.putExtra("division",division4.getText().toString());
                 i.putExtra("batch",batch04.getText().toString());
+                i.putExtra("name",MentorName.getText().toString());
                 startActivity(i);
             }
         });

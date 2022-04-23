@@ -12,6 +12,12 @@ public class DataNotice {
     public DataNotice() {
     }
 
+    public DataNotice(String postedOn, String postedBy, String notice) {
+        PostedOn = postedOn;
+        PostedBy = postedBy;
+        Notice = notice;
+    }
+
     public DataNotice(String branch, String accadmicYear, String division, String batch, String postedOn, String postedBy, String notice) {
         Branch = branch;
         AccadmicYear = accadmicYear;

@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EMentoringRAIT">
         <activity
+            android:name=".mentor.MentorChat"
+            android:exported="false" />
+        <activity
+            android:name=".mentee.MenteeChat"
+            android:exported="false" />
+        <activity
             android:name=".mentor.MentorPostNotice"
             android:exported="false" />
         <activity

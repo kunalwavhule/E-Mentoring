@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mentee.MenteeChat">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/llrv"
+        android:weightSum="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/rvChat"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:paddingRight="50dp"
+        android:layout_toLeftOf="@+id/card2"
+        android:id="@+id/card1"
+        android:layout_alignParentBottom="true"
+        android:layout_height="50dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/orange"
+            android:id="@+id/esmsg"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="50dp"
+        android:id="@+id/card2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_height="50dp">
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_ee"
+            android:id="@+id/isbtn"/>
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>

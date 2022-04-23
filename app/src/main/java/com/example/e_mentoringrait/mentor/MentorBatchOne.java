@@ -9,14 +9,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.e_mentoringrait.Login;
 import com.example.e_mentoringrait.R;
 import com.example.e_mentoringrait.adapter.MentorBatchOneAdapter;
 import com.example.e_mentoringrait.adapter.UserAdapter;
+import com.example.e_mentoringrait.mentee.MenteeNotice;
 import com.example.e_mentoringrait.model.DataMentee;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,6 +33,7 @@ public class MentorBatchOne extends AppCompatActivity {
     MentorBatchOneAdapter mentorBatchOneAdapter;
     FirebaseAuth auth = FirebaseAuth.getInstance();
     private DatabaseReference mMentor;
+    FloatingActionButton fabNotice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +42,14 @@ public class MentorBatchOne extends AppCompatActivity {
         rv = findViewById(R.id.mbrc);
         rv.setLayoutManager(new LinearLayoutManager(this));
         mMentor = FirebaseDatabase.getInstance().getReference();
+        fabNotice = findViewById(R.id.fabNotice);
 
         Intent intent = getIntent();
         final String branch = intent.getStringExtra("branch");
         final String year = intent.getStringExtra("year");
         final String division = intent.getStringExtra("division");
         final String batch = intent.getStringExtra("batch");
+        final String name = intent.getStringExtra("name");
 
         mMentor = FirebaseDatabase.getInstance().getReference().child(branch).child(year).child(division).child(batch);
         FirebaseRecyclerOptions<DataMentee> options =
@@ -52,6 +58,19 @@ public class MentorBatchOne extends AppCompatActivity {
                         .build();
         mentorBatchOneAdapter = new MentorBatchOneAdapter(options);
         rv.setAdapter(mentorBatchOneAdapter);
+
+        fabNotice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), MentorPostNotice.class);
+                i.putExtra("branch",branch);
+                i.putExtra("year",year);
+                i.putExtra("division",division);
+                i.putExtra("batch",batch);
+                i.putExtra("name",name);
+                startActivity(i);
+            }
+        });
 
     }
     @Override

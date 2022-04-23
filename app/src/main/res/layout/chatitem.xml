@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="match_parent"
+        android:textSize="18dp"
+        android:text="Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011"
+        android:layout_height="wrap_content"
+        android:id="@+id/msg"/>
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/msg"
+            android:textStyle="bold"
+            android:text="12:30"/>
+        <TextView
+            android:id="@+id/sendername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/msg"
+            android:textStyle="bold"
+            android:text="Namita"/>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

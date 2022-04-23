@@ -75,17 +75,22 @@ public class MenteeDashboard extends AppCompatActivity {
                     case R.id.home:
                         return true;
                     case R.id.chat:
-                        Toast.makeText(getApplicationContext(),"Its the Chat",Toast.LENGTH_LONG).show();
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.notification:
-                        Intent myIntent = new Intent(getApplicationContext(), MenteeNotice.class);
+                        Intent myIntent = new Intent(getApplicationContext(), MenteeChat.class);
                         myIntent.putExtra("branch", one.getText().toString());
                         myIntent.putExtra("accadmicYear", two.getText().toString());
                         myIntent.putExtra("division", three.getText().toString());
                         myIntent.putExtra("batch", four.getText().toString());
                         startActivity(myIntent);
+
+                        return true;
+
+                    case R.id.notification:
+                        Intent intentnotification = new Intent(getApplicationContext(), MenteeNotice.class);
+                        intentnotification.putExtra("branch", one.getText().toString());
+                        intentnotification.putExtra("accadmicYear", two.getText().toString());
+                        intentnotification.putExtra("division", three.getText().toString());
+                        intentnotification.putExtra("batch", four.getText().toString());
+                        startActivity(intentnotification);
                         return true;
                     case R.id.profile:
                         startActivity(new Intent(getApplicationContext(),MenteeProfile.class));
