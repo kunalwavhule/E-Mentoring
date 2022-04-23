@@ -26,7 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 public class MenteeDashboard extends AppCompatActivity {
     FirebaseAuth  auth = FirebaseAuth.getInstance();
     private DatabaseReference mDatabase;
-    TextView one,two,three,four,sname,sRollno;
+    TextView one,two,three,four,sname,sRollno,mentorUid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,7 @@ public class MenteeDashboard extends AppCompatActivity {
         four = findViewById(R.id.textView20);
         sname = findViewById(R.id.sName);
         sRollno = findViewById(R.id.sRollno);
+        mentorUid = findViewById(R.id.mentorUid);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         ValueEventListener postListener = new ValueEventListener() {
@@ -49,12 +50,15 @@ public class MenteeDashboard extends AppCompatActivity {
                 String division = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("division").getValue(String.class);
                 String fullName = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("fullName").getValue(String.class);
                 String rollNo = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("rollNo").getValue(String.class);
+                String mentorid = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("mentorUid").getValue(String.class);
+
                 one.setText(branch);
                 two.setText(accadmicYear);
                 three.setText(division);
                 four.setText(batch);
                 sname.setText("Name  -  "+fullName);
                 sRollno.setText(""+rollNo);
+                mentorUid.setText(mentorid);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -69,8 +73,12 @@ public class MenteeDashboard extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId()){
                     case R.id.notes:
-                        Toast.makeText(getApplicationContext(),"Its the Notes",Toast.LENGTH_LONG).show();
-                        overridePendingTransition(0,0);
+                        Intent i = new Intent(getApplicationContext(), MenteeExtraCirculam.class);
+                        i.putExtra("branch", one.getText().toString());
+                        i.putExtra("accadmicYear", two.getText().toString());
+                        i.putExtra("division", three.getText().toString());
+                        i.putExtra("batch", four.getText().toString());
+                        startActivity(i);
                         return true;
                     case R.id.home:
                         return true;
@@ -80,6 +88,7 @@ public class MenteeDashboard extends AppCompatActivity {
                         myIntent.putExtra("accadmicYear", two.getText().toString());
                         myIntent.putExtra("division", three.getText().toString());
                         myIntent.putExtra("batch", four.getText().toString());
+                        myIntent.putExtra("mentorUid", mentorUid.getText().toString());
                         startActivity(myIntent);
 
                         return true;

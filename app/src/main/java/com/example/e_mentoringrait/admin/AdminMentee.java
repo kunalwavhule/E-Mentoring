@@ -11,13 +11,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.e_mentoringrait.R;
+import com.example.e_mentoringrait.model.DataEvent;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -32,14 +36,18 @@ public class AdminMentee extends AppCompatActivity {
             sb5ut1,sb5ut2,sb5fl
             ,sb6ut1,sb6ut2,sb6fl;
 
-    AlertDialog dialog;
-    ImageButton back;
+    AlertDialog dialog,dialog1;
+    ImageButton back,addevent;
     LineChart lineChart;
+
+    private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference mRef = mDatabase.getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_mentee);
+        addevent = findViewById(R.id.addevnt);
         textView = findViewById(R.id.t1);
         afullname = findViewById(R.id.FullNameam);
         amobileno = findViewById(R.id.StudentNumberam);
@@ -89,6 +97,8 @@ public class AdminMentee extends AppCompatActivity {
         String caste = getIntent().getStringExtra("caste");
         String accadmicyear = getIntent().getStringExtra("accadmicyear");
         String div = getIntent().getStringExtra("division");
+        String batch = getIntent().getStringExtra("batch");
+        String uid = getIntent().getStringExtra("uid");
 
 
         textView.setText(fullname);
@@ -112,6 +122,44 @@ public class AdminMentee extends AppCompatActivity {
                 finish();
             }
         });
+
+        AlertDialog.Builder builderEvent = new AlertDialog.Builder(this);
+        builderEvent.setTitle("Enter the Mark");
+        View view1 = getLayoutInflater().inflate(R.layout.addevent,null);
+        EditText eventName,eventTypes,eventOrganizer,eventDiscription,eventDate;
+        eventName = view1.findViewById(R.id.eventNameadd);
+        eventTypes = view1.findViewById(R.id.eventTypesadd);
+        eventOrganizer = view1.findViewById(R.id.eventOrganizeradd);
+        eventDiscription = view1.findViewById(R.id.eventDiscriptionadd);
+        eventDate = view1.findViewById(R.id.eventdateadd);
+        Button submit1 = view1.findViewById(R.id.btnAddEvent);
+        submit1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String eventNames = eventName.getText().toString();
+                String eventTypess = eventTypes.getText().toString();
+                String eventOrganizers = eventOrganizer.getText().toString();
+                String eventDiscriptions = eventDiscription.getText().toString();
+                String eventDates = eventDate.getText().toString();
+                String key = mRef.push().getKey();
+
+                DataEvent dataEvent = new DataEvent(eventNames,eventOrganizers,eventTypess,eventDiscriptions,eventDates);
+                mRef.child("Event").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(key).setValue(dataEvent);
+                Toast.makeText(getApplicationContext(),"Add the Data Successfully",Toast.LENGTH_SHORT).show();
+                dialog1.dismiss();
+            }
+        });
+        builderEvent.setView(view1);
+
+        dialog1 = builderEvent.create();
+
+        addevent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog1.show();
+            }
+        });
+
 
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

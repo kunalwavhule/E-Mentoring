@@ -1,468 +1,526 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".mentor.MentorBatchOne">
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:background="@color/popster"
-        android:layout_height="wrap_content">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp">
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-            <ImageButton
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@color/popster"
-                android:src="@drawable/ic_baseline_back_24"
-                android:id="@+id/back"/>
-            <TextView
-                android:id="@+id/t1"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="Name"
-                android:layout_toRightOf="@+id/back"
-                android:background="@color/popster"
-                android:gravity="center"
-                android:textSize="20sp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:background="@color/popster">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center">
-                <ImageView
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <ImageButton
+                    android:id="@+id/back"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@color/popster"
+                    android:src="@drawable/ic_baseline_back_24" />
+
+                <TextView
+                    android:id="@+id/t1"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic__profile"/>
-            </androidx.cardview.widget.CardView>
+                    android:layout_height="50dp"
+                    android:layout_toRightOf="@+id/back"
+                    android:background="@color/popster"
+                    android:gravity="center"
+                    android:text="Name"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:layout_gravity="center">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:orientation="vertical"
-                    android:layout_height="match_parent">
-                    <TextView
-                        android:id="@+id/StudentNumberam"
-                        android:layout_width="match_parent"
-                        android:drawableLeft="@drawable/ic_phone"
-                        android:drawablePadding="20dp"
-                        android:text="8668306104"
-                        android:gravity="center"
-                        android:layout_marginBottom="25dp"
-                        android:layout_height="30sp"/>
-                    <TextView
-                        android:id="@+id/Emailam"
-                        android:layout_width="match_parent"
-                        android:drawableLeft="@drawable/ic__email_24"
-                        android:drawablePadding="20dp"
-                        android:layout_marginBottom="25dp"
-                        android:text="kun.wav.rt17@rait.ac.in"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:drawableLeft="@drawable/ic_college"
-                        android:drawablePadding="20dp"
-                        android:layout_marginBottom="25dp"
-                        android:text="Ramarao Adik Institude Of Technology"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"/>
-                    <TextView
-                        android:id="@+id/Brancham"
-                        android:layout_width="match_parent"
-                        android:drawableLeft="@drawable/ic_branch"
-                        android:drawablePadding="20dp"
-                        android:layout_marginBottom="25dp"
-                        android:text="Computer Engineering"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="Personal/Academic Details"
-                android:background="@color/popster"
-                android:gravity="center"
-                android:textSize="20sp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:layout_gravity="center">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:orientation="vertical"
-                    android:layout_height="match_parent">
-                    <TextView
-                        android:id="@+id/FullNameam"
-                        android:layout_width="match_parent"
-                        android:drawablePadding="20dp"
-                        android:text="Name \t:\t\t\t kunal"
-                        android:gravity="center"
-                        android:layout_marginBottom="25dp"
-                        android:layout_height="30sp"/>
-                    <TextView
-                        android:id="@+id/RollNoam"
-                        android:layout_width="match_parent"
-                        android:drawablePadding="20dp"
-                        android:layout_marginBottom="25dp"
-                        android:text="RollNo :"
-                        android:layout_height="wrap_content"/>
-                    <TextView
-                        android:id="@+id/spnReligionam"
-                        android:layout_width="match_parent"
-                        android:drawablePadding="20dp"
-                        android:layout_marginBottom="25dp"
-                        android:text="\t\t Category :"
-                        android:layout_height="wrap_content"/>
-                    <TextView
-                        android:id="@+id/spnCasteam"
-                        android:layout_width="match_parent"
-                        android:drawablePadding="20dp"
-                        android:layout_marginBottom="25dp"
-                        android:text="\t\t Caste :"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/popster"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:text="Sem1"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/edit_background"
-                android:gravity="center"
-                android:layout_margin="20dp"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic__profile" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="50dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_weight="3"
-                        android:textSize="15dp"
-                        android:gravity="center"
-                        android:id="@+id/subName"
-                        android:text="Subject name"/>
-                    <TextView
-                        android:id="@+id/sm1ut1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:inputType="number"
-                        android:hint="UT 1" />
-                    <TextView
-                        android:id="@+id/sem1ut2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:inputType="number"
-                        android:hint="UT 2" />
-                    <TextView
-                        android:id="@+id/sem1fl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:inputType="number"
-                        android:hint="Final Mark" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                </LinearLayout>
+                        <TextView
+                            android:id="@+id/StudentNumberam"
+                            android:layout_width="match_parent"
+                            android:layout_height="30sp"
+                            android:layout_marginBottom="25dp"
+                            android:drawableLeft="@drawable/ic_phone"
+                            android:drawablePadding="20dp"
+                            android:gravity="center"
+                            android:text="8668306104" />
 
+                        <TextView
+                            android:id="@+id/Emailam"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="25dp"
+                            android:drawableLeft="@drawable/ic__email_24"
+                            android:drawablePadding="20dp"
+                            android:gravity="center"
+                            android:text="kun.wav.rt17@rait.ac.in" />
 
-                <LinearLayout
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="25dp"
+                            android:drawableLeft="@drawable/ic_college"
+                            android:drawablePadding="20dp"
+                            android:gravity="center"
+                            android:text="Ramarao Adik Institude Of Technology" />
+
+                        <TextView
+                            android:id="@+id/Brancham"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="25dp"
+                            android:drawableLeft="@drawable/ic_branch"
+                            android:drawablePadding="20dp"
+                            android:gravity="center"
+                            android:text="Computer Engineering" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edit_background"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_weight="3"
-                        android:textSize="12dp"
-                        android:gravity="center"
-                        android:id="@+id/sN1"
-
-                        android:text="Applied Mathematic"/>
-                    <TextView
-                        android:id="@+id/sb1ut1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0"
-                        android:layout_weight="2"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/sb1ut2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:text="0"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/sb1fl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:text="0"
-                        android:inputType="number" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="@color/popster"
                     android:gravity="center"
-                    android:background="@drawable/edit_background"
-                    android:orientation="horizontal">
+                    android:text="Personal/Academic Details"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_weight="3"
-                        android:textSize="12dp"
-                        android:gravity="center"
-                        android:id="@+id/sN2"
-                        android:text="Applied Physics-1"/>
-                    <TextView
-                        android:id="@+id/sb2ut1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:text="0"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/sb2ut2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/sb2fl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:inputType="number" />
-                </LinearLayout>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="50dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/FullNameam"
+                            android:layout_width="match_parent"
+                            android:layout_height="30sp"
+                            android:layout_marginBottom="25dp"
+                            android:drawablePadding="20dp"
+                            android:gravity="center"
+                            android:text="Name \t:\t\t\t kunal" />
+
+                        <TextView
+                            android:id="@+id/RollNoam"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="25dp"
+                            android:drawablePadding="20dp"
+                            android:text="RollNo :" />
+
+                        <TextView
+                            android:id="@+id/spnReligionam"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="25dp"
+                            android:drawablePadding="20dp"
+                            android:text="\t\t Category :" />
+
+                        <TextView
+                            android:id="@+id/spnCasteam"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="25dp"
+                            android:drawablePadding="20dp"
+                            android:text="\t\t Caste :" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/popster"
+                    android:gravity="center"
+                    android:text="Sem1"
+                    android:textColor="@color/white" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
                     android:background="@drawable/edit_background"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_weight="3"
-                        android:textSize="12dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/subName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_weight="3"
+                            android:gravity="center"
+                            android:text="Subject name"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/sm1ut1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:hint="UT 1"
+                            android:inputType="number" />
+
+                        <TextView
+                            android:id="@+id/sem1ut2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:hint="UT 2"
+                            android:inputType="number" />
+
+                        <TextView
+                            android:id="@+id/sem1fl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:hint="Final Mark"
+                            android:inputType="number" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_background"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/sN1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_weight="3"
+                            android:gravity="center"
+                            android:text="Applied Mathematic"
+
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/sb1ut1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:inputType="number"
+                            android:text="0" />
+
+                        <TextView
+                            android:id="@+id/sb1ut2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:inputType="number"
+                            android:text="0" />
+
+                        <TextView
+                            android:id="@+id/sb1fl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:inputType="number"
+                            android:text="0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_background"
                         android:gravity="center"
-                        android:id="@+id/sN3"
-                        android:text="Applied Chemisty-1"/>
-                    <TextView
-                        android:id="@+id/sb3ut1"
-                        android:layout_width="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/sN2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_weight="3"
+                            android:gravity="center"
+                            android:text="Applied Physics-1"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/sb2ut1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:hint="NA"
+                            android:inputType="number"
+                            android:text="0" />
+
+                        <TextView
+                            android:id="@+id/sb2ut2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:hint="NA"
+                            android:inputType="number" />
+
+                        <TextView
+                            android:id="@+id/sb2fl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:hint="NA"
+                            android:inputType="number" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:text="0"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/sb3ut2"
-                        android:text="0"
-                        android:layout_width="wrap_content"
+                        android:background="@drawable/edit_background"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/sN3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_weight="3"
+                            android:gravity="center"
+                            android:text="Applied Chemisty-1"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/sb3ut1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:hint="NA"
+                            android:inputType="number"
+                            android:text="0" />
+
+                        <TextView
+                            android:id="@+id/sb3ut2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:hint="NA"
+                            android:inputType="number"
+                            android:text="0" />
+
+                        <TextView
+                            android:id="@+id/sb3fl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:hint="NA"
+                            android:inputType="number" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/sb3fl"
-                        android:layout_width="wrap_content"
+                        android:background="@drawable/edit_background"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/sN4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_weight="3"
+                            android:gravity="center"
+                            android:text="Engineering Mechanics"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/sb4ut1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:hint="NA"
+                            android:inputType="number"
+                            android:text="0" />
+
+                        <TextView
+                            android:id="@+id/sb4ut2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:hint="NA"
+                            android:inputType="number"
+                            android:text="0" />
+
+                        <TextView
+                            android:id="@+id/sb4fl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:hint="NA"
+                            android:inputType="number" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:inputType="number" />
+                        android:background="@drawable/edit_background"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/sN5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_weight="3"
+                            android:gravity="center"
+                            android:text="Basic Electrical Engineering"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/sb5ut1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:hint="NA"
+                            android:inputType="number"
+                            android:text="0" />
+
+                        <TextView
+                            android:id="@+id/sb5ut2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:hint="NA"
+                            android:inputType="number" />
+
+                        <TextView
+                            android:id="@+id/sb5fl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:hint="NA"
+                            android:inputType="number" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_background"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/sN6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_weight="3"
+                            android:gravity="center"
+                            android:text="Environment Studies"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/sb6ut1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:hint="NA"
+                            android:inputType="number"
+                            android:text="0" />
+
+                        <TextView
+                            android:id="@+id/sb6ut2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:hint="NA"
+                            android:inputType="number" />
+
+                        <TextView
+                            android:id="@+id/sb6fl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:hint="NA"
+                            android:inputType="number" />
+                    </LinearLayout>
+
+
                 </LinearLayout>
 
-                <LinearLayout
+                <View
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edit_background"
-                    android:orientation="horizontal">
+                    android:layout_height="1dp"
+                    android:background="@color/popster" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_weight="3"
-                        android:gravity="center"
-                        android:textSize="12dp"
-                        android:id="@+id/sN4"
-                        android:text="Engineering Mechanics"/>
-                    <TextView
-                        android:id="@+id/sb4ut1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:text="0"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/sb4ut2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:text="0"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/sb4fl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:inputType="number" />
-                </LinearLayout>
-
-                <LinearLayout
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/linechart"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edit_background"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_weight="3"
-                        android:textSize="12dp"
-                        android:gravity="center"
-                        android:id="@+id/sN5"
-                        android:text="Basic Electrical Engineering"/>
-                    <TextView
-                        android:id="@+id/sb5ut1"
-                        android:text="0"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/sb5ut2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/sb5fl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:inputType="number" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edit_background"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_weight="3"
-                        android:textSize="12dp"
-                        android:gravity="center"
-                        android:id="@+id/sN6"
-                        android:text="Environment Studies"/>
-                    <TextView
-                        android:id="@+id/sb6ut1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:text="0"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/sb6ut2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:inputType="number" />
-                    <TextView
-                        android:id="@+id/sb6fl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:hint="NA"
-                        android:inputType="number" />
-                </LinearLayout>
-
+                    android:layout_height="500dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginRight="50dp" />
 
 
             </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:background="@color/popster"
-                android:layout_height="1dp"/>
 
-            <com.github.mikephil.charting.charts.LineChart
-                android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:layout_marginTop="50dp"
-                android:id="@+id/linechart"/>
+        </ScrollView>
+    </LinearLayout>
 
 
-        </LinearLayout>
 
-    </ScrollView>
-
-
-</LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/chatmentor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/circle_celeste" />
+</androidx.constraintlayout.widget.ConstraintLayout>

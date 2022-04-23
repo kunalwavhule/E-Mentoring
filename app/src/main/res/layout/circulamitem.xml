@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/eventName"
+        android:text="Extra-Curricular Events"
+        android:textStyle="bold"
+        android:layout_toLeftOf="@+id/eventdate"
+        android:textSize="22dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/eventTypes"
+        android:text="Technical"
+        android:layout_below="@+id/eventOrganizer"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/eventOrganizer"
+        android:text="Marathwada Mitra Mandal's ..."
+        android:layout_below="@+id/eventName"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/eventDiscription"
+        android:text="If you have a high school student, you probably already know that extracurricular activities are an important factor for college admissions. Many colleges and universities weigh participation in extracurriculars because activities outside the classroom bolster the development of the “whole student.” But extracurricular activities are beneficial for all students, regardless of their post-high school plans"
+        android:layout_below="@+id/eventTypes"
+        android:textSize="15dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_height="wrap_content"
+        android:id="@+id/eventdate"
+        android:text="9th Feb' 2011"
+
+        android:textSize="10dp"/>
+
+</RelativeLayout>
+</androidx.cardview.widget.CardView>

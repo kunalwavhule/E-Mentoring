@@ -1,9 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".mentor.MentorChat">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/llrv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/card1"
+        android:layout_marginBottom="4dp"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvChats"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:paddingRight="50dp"
+        android:layout_toLeftOf="@+id/card2"
+        android:id="@+id/card1"
+        android:layout_alignParentBottom="true"
+        android:layout_height="50dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/orange"
+            android:id="@+id/editTextchat"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="50dp"
+        android:id="@+id/card2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_height="50dp">
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_ee"
+            android:id="@+id/btnChat"/>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

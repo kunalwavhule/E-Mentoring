@@ -53,7 +53,8 @@ public class UserAdapter extends FirebaseRecyclerAdapter<DataMentee,UserAdapter.
                 intent.putExtra("caste",model.getCaste());
                 intent.putExtra("accadmicyear",model.getAccadmicYear());
                 intent.putExtra("division",model.getDivision());
-
+                intent.putExtra("batch",model.getBatch());
+                intent.putExtra("uid",model.getUid());
 
 
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

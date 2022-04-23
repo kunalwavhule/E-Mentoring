@@ -14,15 +14,20 @@ import android.widget.TextView;
 
 import com.example.e_mentoringrait.R;
 import com.example.e_mentoringrait.admin.AdminBatch;
+import com.example.e_mentoringrait.admin.AdminYear;
+import com.example.e_mentoringrait.mentee.MenteeChat;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
 public class MentorMentee extends AppCompatActivity {
+    FloatingActionButton floatingActionButton;
 
     TextView textView,afullname,amobileno,aemail,abranch,arollno,areligion,acaste;
 
@@ -44,6 +49,8 @@ public class MentorMentee extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentor_mentee);
         getSupportActionBar().setTitle("Mentor Mentee");
+
+        floatingActionButton = findViewById(R.id.chatmentor);
 
         textView = findViewById(R.id.t1);
         afullname = findViewById(R.id.FullNameam);
@@ -95,8 +102,23 @@ public class MentorMentee extends AppCompatActivity {
         String accadmicyear = getIntent().getStringExtra("accadmicyear");
         String div = getIntent().getStringExtra("division");
         String batch = getIntent().getStringExtra("batch");
+        String uid = getIntent().getStringExtra("uid");
 
 
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), MentorChat.class);
+                i.putExtra("branch",branch);
+                i.putExtra("accadmicyear",accadmicyear);
+                i.putExtra("div",div);
+                i.putExtra("batch",batch);
+                i.putExtra("mentorUid", FirebaseAuth.getInstance().getUid());
+                i.putExtra("menteeUid",uid);
+                startActivity(i);
+
+            }
+        });
         textView.setText(fullname);
         afullname.setText("Name \t\t:"+fullname);
         amobileno.setText(mobileno);

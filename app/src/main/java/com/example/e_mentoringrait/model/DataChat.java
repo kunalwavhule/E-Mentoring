@@ -12,6 +12,12 @@ public class DataChat {
 
     }
 
+    public DataChat(String msg,String sfullName ,String time) {
+        this.msg = msg;
+        this.sfullName = sfullName;
+        this.time = time;
+    }
+
     public DataChat(String msg, String ruid, String suid, String rfullName, String sfullName, String time) {
         this.msg = msg;
         this.ruid = ruid;
