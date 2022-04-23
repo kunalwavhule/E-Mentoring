@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/drawable-v24/ic_baseline_account_balance_24.xml" value="0.188" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/drawable-v24/ic_baseline_location_on_24.xml" value="0.188" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/drawable-v24/ic_baseline_money_24.xml" value="0.188" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/drawable/button_background.xml" value="0.1" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/drawable/circle_popster.xml" value="0.1545" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/drawable/circle_skyblue.xml" value="0.183" />
@@ -36,6 +39,8 @@
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_sem1.xml" value="0.1" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/addevent.xml" value="0.275626423690205" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/addplacementitem.xml" value="0.1" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/alertplacementitem.xml" value="0.1796875" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/batchitem.xml" value="0.1796875" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/calendaritem.xml" value="0.22" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/chatitem.xml" value="0.1" />

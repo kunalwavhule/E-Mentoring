@@ -44,7 +44,7 @@ public class MentorPostNotice extends AppCompatActivity {
                 String date = DateFormat.getDateInstance().format(new Date());
                 DataNotice dataNotice = new DataNotice(name,date,post.getText().toString());
                 myRef.child("Notice").child(branch).child(year).child(division).child(batch).child(key).setValue(dataNotice);
-post.setText("");
+                post.setText("");
             }
         });
 

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/companyNameAlert"
+        android:background="@drawable/edit_background"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="textMultiLine"
+        android:lines="1"
+        android:drawablePadding="10dp"
+        android:hint="Company Name"
+        android:paddingLeft="10dp" />
+    <EditText
+        android:id="@+id/companyPositionAlert"
+        android:background="@drawable/edit_background"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="textMultiLine"
+        android:lines="1"
+        android:drawablePadding="10dp"
+        android:hint="Enter the Role Of Joining"
+        android:paddingLeft="10dp" />
+
+    <EditText
+        android:id="@+id/companyLoacationAlert"
+        android:background="@drawable/edit_background"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="textMultiLine"
+        android:lines="1"
+        android:drawableLeft="@drawable/ic_baseline_location_on_24"
+        android:drawablePadding="10dp"
+        android:hint="Enter the Location"
+        android:paddingLeft="10dp" />
+    <EditText
+        android:id="@+id/companyPackageAlert"
+        android:background="@drawable/edit_background"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="text"
+        android:lines="1"
+        android:drawableLeft="@drawable/ic_baseline_money_24"
+        android:drawablePadding="10dp"
+        android:hint="Enter the Location"
+        android:paddingLeft="10dp" />
+
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:text="submit"
+    android:layout_marginTop="20dp"
+    android:id="@+id/btnplacementalert"/>
+</LinearLayout>
+</androidx.cardview.widget.CardView>

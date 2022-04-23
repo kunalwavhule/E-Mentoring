@@ -770,6 +770,32 @@
                 android:layout_marginTop="50dp"
                 android:id="@+id/linechart2"/>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="50dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Placement Details"
+                    android:background="@color/popster"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:layout_toLeftOf="@+id/addplacement"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/addplacement"
+                    android:background="@color/popster"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_add"/>
+            </RelativeLayout>
+
+
 
         </LinearLayout>
 

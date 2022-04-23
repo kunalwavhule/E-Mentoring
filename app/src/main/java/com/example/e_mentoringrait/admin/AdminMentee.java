@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.e_mentoringrait.R;
 import com.example.e_mentoringrait.model.DataEvent;
+import com.example.e_mentoringrait.model.DataPlacement;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
@@ -36,8 +37,8 @@ public class AdminMentee extends AppCompatActivity {
             sb5ut1,sb5ut2,sb5fl
             ,sb6ut1,sb6ut2,sb6fl;
 
-    AlertDialog dialog,dialog1;
-    ImageButton back,addevent;
+    AlertDialog dialog,dialog1,dialog2;
+    ImageButton back,addevent,addPlacement;
     LineChart lineChart;
 
     private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
@@ -47,6 +48,7 @@ public class AdminMentee extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_mentee);
+        addPlacement = findViewById(R.id.addplacement);
         addevent = findViewById(R.id.addevnt);
         textView = findViewById(R.id.t1);
         afullname = findViewById(R.id.FullNameam);
@@ -123,6 +125,7 @@ public class AdminMentee extends AppCompatActivity {
             }
         });
 
+        //AlertDialog Box Extra Circular Activity
         AlertDialog.Builder builderEvent = new AlertDialog.Builder(this);
         builderEvent.setTitle("Enter the Mark");
         View view1 = getLayoutInflater().inflate(R.layout.addevent,null);
@@ -142,7 +145,6 @@ public class AdminMentee extends AppCompatActivity {
                 String eventDiscriptions = eventDiscription.getText().toString();
                 String eventDates = eventDate.getText().toString();
                 String key = mRef.push().getKey();
-
                 DataEvent dataEvent = new DataEvent(eventNames,eventOrganizers,eventTypess,eventDiscriptions,eventDates);
                 mRef.child("Event").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(key).setValue(dataEvent);
                 Toast.makeText(getApplicationContext(),"Add the Data Successfully",Toast.LENGTH_SHORT).show();
@@ -150,15 +152,52 @@ public class AdminMentee extends AppCompatActivity {
             }
         });
         builderEvent.setView(view1);
-
         dialog1 = builderEvent.create();
-
         addevent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog1.show();
             }
         });
+
+
+        //AlertDialog Box For Placement
+
+        AlertDialog.Builder builderPlacement = new AlertDialog.Builder(this);
+        builderPlacement.setTitle("Enter the Detail");
+        View view2 = getLayoutInflater().inflate(R.layout.alertplacementitem,null);
+        EditText companyNameAlert,companyPositionAlert,companyLoacationAlert,companyPackageAlert;
+        companyNameAlert = view2.findViewById(R.id.companyNameAlert);
+        companyPositionAlert = view2.findViewById(R.id.companyPositionAlert);
+        companyLoacationAlert = view2.findViewById(R.id.companyLoacationAlert);
+        companyPackageAlert = view2.findViewById(R.id.companyPackageAlert);
+        Button submit2 = view2.findViewById(R.id.btnplacementalert);
+        submit2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String companyNameAlerts = companyNameAlert.getText().toString();
+                String companyPositionAlerts = companyPositionAlert.getText().toString();
+                String companyLoacationAlerts = companyLoacationAlert.getText().toString();
+                String companyPackageAlerts = companyPackageAlert.getText().toString();
+                String key = mRef.push().getKey();
+
+                DataPlacement dataPlacement = new DataPlacement(companyNameAlerts,companyPositionAlerts,companyLoacationAlerts,companyPackageAlerts);
+                mRef.child("Placement").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(key).setValue(dataPlacement);
+                Toast.makeText(getApplicationContext(),"Add the Data Successfully",Toast.LENGTH_SHORT).show();
+                dialog2.dismiss();
+            }
+        });
+        builderPlacement.setView(view2);
+
+        dialog2 = builderPlacement.create();
+
+        addPlacement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog2.show();
+            }
+        });
+
 
 
 
