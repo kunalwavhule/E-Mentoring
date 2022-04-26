@@ -2,6 +2,8 @@ package com.example.e_mentoringrait.admin;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -12,15 +14,26 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.text.TextUtils;
 
 import com.example.e_mentoringrait.R;
+import com.example.e_mentoringrait.adapter.ChatAdapter;
+import com.example.e_mentoringrait.adapter.SemAdapter;
+import com.example.e_mentoringrait.model.DataChat;
 import com.example.e_mentoringrait.model.DataEvent;
 import com.example.e_mentoringrait.model.DataPlacement;
+import com.example.e_mentoringrait.model.DataSemSubject;
+import com.example.e_mentoringrait.model.DataSemSubjectName;
+import com.example.e_mentoringrait.model.DataSemUt1;
+import com.example.e_mentoringrait.model.DataSemUt2;
+import com.example.e_mentoringrait.model.DataSemfl;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -29,27 +42,35 @@ import java.util.ArrayList;
 public class AdminMentee extends AppCompatActivity {
     TextView textView,afullname,amobileno,aemail,abranch,arollno,areligion,acaste;
 
-    TextView sem1ut1,sem1ut2,semfl,
+    RecyclerView rvSem;
+    SemAdapter semAdapter;
+
+  /*  TextView sem1ut1,sem1ut2,semfl,
             sb1ut1,sb1ut2,sb1fl,
             sb2ut1,sb2ut2,sb2fl,
             sb3ut1,sb3ut2,sb3fl,
             sb4ut1,sb4ut2,sb4fl,
             sb5ut1,sb5ut2,sb5fl
-            ,sb6ut1,sb6ut2,sb6fl;
+            ,sb6ut1,sb6ut2,sb6fl;*/
 
-    AlertDialog dialog,dialog1,dialog2;
-    ImageButton back,addevent,addPlacement;
+    AlertDialog dialog,dialog1,dialog2,dialog4sem;
+    ImageButton back,addevent,addPlacement,addsem;
     LineChart lineChart;
 
     private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference mRef = mDatabase.getReference();
+    private DatabaseReference mSem;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_mentee);
         addPlacement = findViewById(R.id.addplacement);
+        rvSem = findViewById(R.id.rvSem);
+        rvSem.setLayoutManager(new LinearLayoutManager(this));
         addevent = findViewById(R.id.addevnt);
+        addsem = findViewById(R.id.addsem);
         textView = findViewById(R.id.t1);
         afullname = findViewById(R.id.FullNameam);
         amobileno = findViewById(R.id.StudentNumberam);
@@ -60,8 +81,10 @@ public class AdminMentee extends AppCompatActivity {
         acaste = findViewById(R.id.spnCasteam);
         back = findViewById(R.id.back);
 
+
+
         //sem 1 subject reference
-        sem1ut1 = findViewById(R.id.sm1ut1);
+     /*   sem1ut1 = findViewById(R.id.sm1ut1);
         sem1ut2 = findViewById(R.id.sem1ut2);
         semfl = findViewById(R.id.sem1fl);
 
@@ -89,7 +112,7 @@ public class AdminMentee extends AppCompatActivity {
         sb6ut2 = findViewById(R.id.sb6ut2);
         sb6fl = findViewById(R.id.sb6fl);
 
-
+*/
         String fullname = getIntent().getStringExtra("fullname");
         String mobileno = getIntent().getStringExtra("mobileno");
         String email = getIntent().getStringExtra("fullname");
@@ -124,6 +147,156 @@ public class AdminMentee extends AppCompatActivity {
                 finish();
             }
         });
+
+        mSem = FirebaseDatabase.getInstance().getReference().child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid);
+
+        FirebaseRecyclerOptions<DataSemSubject> options =
+                new FirebaseRecyclerOptions.Builder<DataSemSubject>()
+                        .setQuery(mSem, DataSemSubject.class)
+                        .build();
+        semAdapter = new SemAdapter(options);
+        rvSem.setAdapter(semAdapter);
+
+        //AlerDialog box Sem
+
+        AlertDialog.Builder builderSem = new AlertDialog.Builder(this);
+        builderSem.setTitle("Enter the Details");
+        View view4 = getLayoutInflater().inflate(R.layout.alertsemitem,null);
+        EditText SemName,
+                SN1, SN2,SN3,SN4, SN5, SN6,
+                Sb1ut1 , Sb2ut1, Sb3ut1, Sb4ut1,Sb5ut1,Sb6ut1,
+                Sb1ut2, Sb2ut2,Sb3ut2,Sb4ut2, Sb5ut2,Sb6ut2,
+                Sb1fl, Sb2fl, Sb3fl, Sb4fl,Sb5fl,Sb6fl;
+
+        SN1 = view4.findViewById(R.id.sN1sm);
+        SN2 = view4.findViewById(R.id.sN2sm);
+        SN3 = view4.findViewById(R.id.sN3sm);
+        SN4 = view4.findViewById(R.id.sN4sm);
+        SN5 = view4.findViewById(R.id.sN5sm);
+        SN6 = view4.findViewById(R.id.sN6sm);
+
+        Sb1ut1 = view4.findViewById(R.id.sb1ut1sm);
+        Sb2ut1 = view4.findViewById(R.id.sb2ut1sm);
+        Sb3ut1 = view4.findViewById(R.id.sb3ut1sm);
+        Sb4ut1 = view4.findViewById(R.id.sb4ut1sm);
+        Sb5ut1 = view4.findViewById(R.id.sb5ut1sm);
+        Sb6ut1 = view4.findViewById(R.id.sb6ut1sm);
+
+        Sb1ut2 = view4.findViewById(R.id.sb1ut2sm);
+        Sb2ut2 = view4.findViewById(R.id.sb2ut2sm);
+        Sb3ut2 = view4.findViewById(R.id.sb3ut2sm);
+        Sb4ut2 = view4.findViewById(R.id.sb4ut2sm);
+        Sb5ut2 = view4.findViewById(R.id.sb5ut2sm);
+        Sb6ut2 = view4.findViewById(R.id.sb6ut2sm);
+
+        Sb1fl = view4.findViewById(R.id.sb1flsm);
+        Sb2fl = view4.findViewById(R.id.sb2flsm);
+        Sb3fl = view4.findViewById(R.id.sb3flsm);
+        Sb4fl = view4.findViewById(R.id.sb4flsm);
+        Sb5fl = view4.findViewById(R.id.sb5flsm);
+        Sb6fl = view4.findViewById(R.id.sb6flsm);
+
+        SemName = view4.findViewById(R.id.semNamesm);
+
+        Button semsubmit = view4.findViewById(R.id.btn_semsubmitsm);
+        semsubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String sN1 = SN1.getText().toString();
+                String sN2 = SN2.getText().toString();
+                String sN3 = SN3.getText().toString();
+                String sN4 = SN4.getText().toString();
+                String sN5 = SN5.getText().toString();
+                String sN6 = SN6.getText().toString();
+
+                String sb1ut1 = Sb1ut1.getText().toString();
+                String sb2ut1 = Sb2ut1.getText().toString();
+                String sb3ut1 = Sb3ut1.getText().toString();
+                String sb4ut1 = Sb4ut1.getText().toString();
+                String sb5ut1 = Sb5ut1.getText().toString();
+                String sb6ut1 = Sb6ut1.getText().toString();
+
+                String sb1ut2 = Sb1ut2.getText().toString();
+                String sb2ut2 = Sb2ut2.getText().toString();
+                String sb3ut2 = Sb3ut2.getText().toString();
+                String sb4ut2 = Sb4ut2.getText().toString();
+                String sb5ut2 = Sb5ut2.getText().toString();
+                String sb6ut2 = Sb6ut2.getText().toString();
+
+                String sb1fl = Sb1fl.getText().toString();
+                String sb2fl = Sb2fl.getText().toString();
+                String sb3fl = Sb3fl.getText().toString();
+                String sb4fl = Sb4fl.getText().toString();
+                String sb5fl = Sb5fl.getText().toString();
+                String sb6fl = Sb6fl.getText().toString();
+
+                String semNames = SemName.getText().toString();
+
+                if (!TextUtils.isEmpty(semNames)) {
+
+            /*        if (!TextUtils.isEmpty(sb1fl)) {
+
+                        DataSemfl dataSemfl = new DataSemfl(semNames,sb1fl,sb2fl,sb3fl,sb4fl,sb5fl,sb6fl);
+                        mRef.child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(semNames).setValue(dataSemfl);
+                        Toast.makeText(getApplicationContext(),"Add the Data Successfully",Toast.LENGTH_SHORT).show();
+                    }
+
+                    if (!TextUtils.isEmpty(sN1)) {
+
+                        DataSemSubjectName dataSemSubjectName = new DataSemSubjectName(semNames,sN1,sN2,sN3,sN4,sN5,sN6);
+                        mRef.child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(semNames).setValue(dataSemSubjectName);
+                        Toast.makeText(getApplicationContext(),"Add the Data Successfully",Toast.LENGTH_SHORT).show();
+                    }
+
+                    if (!TextUtils.isEmpty(sb1ut1)) {
+
+                        DataSemUt1 dataSemUt1 = new DataSemUt1(semNames,sb1ut1,sb2ut1,sb3ut1,sb4ut1,sb5ut1,sb6ut1);
+                        mRef.child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(semNames).setValue(dataSemUt1);
+                        Toast.makeText(getApplicationContext(),"Add the Data Successfully",Toast.LENGTH_SHORT).show();
+                    }
+                    if (!TextUtils.isEmpty(sb1ut2)) {
+
+                        DataSemUt2 dataSemUt2 = new DataSemUt2(semNames,sb1ut2,sb2ut2,sb3ut2,sb4ut2,sb5ut2,sb6ut2);
+                        mRef.child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(semNames).setValue(dataSemUt2);
+                        Toast.makeText(getApplicationContext(),"Add the Data Successfully",Toast.LENGTH_SHORT).show();
+                    }
+
+
+             */
+                  /*  DataSemSubjectName dataSemSubjectName = new DataSemSubjectName(semNames,sN1,sN2,sN3,sN4,sN5,sN6);
+                    mRef.child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(semNames).setValue(dataSemSubjectName);
+
+                    DataSemUt2 dataSemUt2 = new DataSemUt2(semNames,sb1ut2,sb2ut2,sb3ut2,sb4ut2,sb5ut2,sb6ut2);
+                    mRef1.child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(semNames).setValue(dataSemUt2);
+
+                    DataSemUt1 dataSemUt1 = new DataSemUt1(semNames,sb1ut1,sb2ut1,sb3ut1,sb4ut1,sb5ut1,sb6ut1);
+                    mRef2.child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(semNames).setValue(dataSemUt1);
+
+
+                    DataSemfl dataSemfl = new DataSemfl(semNames,sb1fl,sb2fl,sb3fl,sb4fl,sb5fl,sb6fl);
+                    mRef3.child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(semNames).setValue(dataSemfl);
+*/
+                   DataSemSubject dataSemSubject = new DataSemSubject(semNames,sN1,sN2,sN3,sN4,sN5,sN6,sb1ut1,sb2ut1,sb3ut1,sb4ut1,sb5ut1,sb6ut1,sb1ut2,sb2ut2,sb3ut2,sb4ut2,sb5ut2,sb6ut2,sb1fl,sb2fl,sb3fl,sb4fl,sb5fl,sb6fl);
+                    mRef.child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(semNames).setValue(dataSemSubject);
+
+
+                }
+
+                dialog4sem.dismiss();
+
+            }
+        });
+        builderSem.setView(view4);
+        dialog4sem = builderSem.create();
+        addsem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog4sem.show();
+            }
+        });
+
+
 
         //AlertDialog Box Extra Circular Activity
         AlertDialog.Builder builderEvent = new AlertDialog.Builder(this);
@@ -199,7 +372,7 @@ public class AdminMentee extends AppCompatActivity {
         });
 
 
-
+/*
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Enter the Mark");
@@ -281,5 +454,18 @@ public class AdminMentee extends AppCompatActivity {
         LineData lineData=new LineData(lineDataSet);
         lineChart.setData(lineData);
         lineChart.animateY(2000);
+   */
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        semAdapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        semAdapter.stopListening();
     }
 }

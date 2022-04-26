@@ -166,4 +166,25 @@ public class MenteeDashboard extends AppCompatActivity {
         myIntent.putExtra("batch", four.getText().toString());
         startActivity(myIntent);
     }
+
+    public void ExtraCirculam(View view) {
+        Intent myIntent = new Intent(this, MenteeExtraCirculam.class);
+        myIntent.putExtra("branch", one.getText().toString());
+        myIntent.putExtra("accadmicYear", two.getText().toString());
+        myIntent.putExtra("division", three.getText().toString());
+        myIntent.putExtra("batch", four.getText().toString());
+        startActivity(myIntent);
+
+    }
+
+    public void Grades(View view) {
+
+        Intent myIntent = new Intent(this, MenteeGrades.class);
+        myIntent.putExtra("branch", one.getText().toString());
+        myIntent.putExtra("accadmicYear", two.getText().toString());
+        myIntent.putExtra("division", three.getText().toString());
+        myIntent.putExtra("batch", four.getText().toString());
+        startActivity(myIntent);
+
+    }
 }

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".mentor.MentorBatchOne">
+    tools:context=".mentor.MentorMentee">
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="0dp"
@@ -511,8 +512,6 @@
         </ScrollView>
     </LinearLayout>
 
-
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/chatmentor"
         android:layout_width="wrap_content"
@@ -523,4 +522,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/circle_celeste" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

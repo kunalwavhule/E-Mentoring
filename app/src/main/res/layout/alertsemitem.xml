@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/popster"
+            android:gravity="center"
+            android:hint="Sem"
+            android:id="@+id/semNamesm"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/edit_background"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/subName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="Subject name"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/sem1ut1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="UT 1"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/sem1ut2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="UT 2"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/sem1fl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="Final Mark"
+                    android:inputType="number" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_background"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/sN1sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:hint="Applied Mathematic"
+
+                    android:textSize="12dp" />
+
+                <EditText
+                    android:id="@+id/sb1ut1sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="number"
+                    android:text="0" />
+
+                <EditText
+                    android:id="@+id/sb1ut2sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="number"
+                    android:text="0" />
+
+                <EditText
+                    android:id="@+id/sb1flsm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="number"
+                    android:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_background"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/sN2sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="Applied Physics-1"
+                    android:textSize="12dp" />
+
+                <EditText
+                    android:id="@+id/sb2ut1sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="NA"
+                    android:inputType="number"
+                    android:text="0" />
+
+                <EditText
+                    android:id="@+id/sb2ut2sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="0"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/sb2flsm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="0"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_background"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/sN3sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="Applied Chemisty-1"
+                    android:textSize="12dp" />
+
+                <EditText
+                    android:id="@+id/sb3ut1sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="0"
+                    android:inputType="number"
+                    android:text="0" />
+
+                <EditText
+                    android:id="@+id/sb3ut2sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="NA"
+                    android:inputType="number"
+                    android:text="0" />
+
+                <EditText
+                    android:id="@+id/sb3flsm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="0"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_background"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/sN4sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:hint="Engineering Mechanics"
+                    android:textSize="12dp" />
+
+                <EditText
+                    android:id="@+id/sb4ut1sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="NA"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/sb4ut2sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="NA"
+                    android:inputType="number"
+                    android:text="0" />
+
+                <EditText
+                    android:id="@+id/sb4flsm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="NA"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_background"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/sN5sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:hint="Basic Electrical Engineering"
+                    android:textSize="12dp" />
+
+                <EditText
+                    android:id="@+id/sb5ut1sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="NA"
+                    android:inputType="number"
+                    android:text="0" />
+
+                <EditText
+                    android:id="@+id/sb5ut2sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="NA"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/sb5flsm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="NA"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_background"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/sN6sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:hint="Environment Studies"
+                    android:textSize="12dp" />
+
+                <EditText
+                    android:id="@+id/sb6ut1sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="NA"
+                    android:inputType="number"
+                    android:text="0" />
+
+                <EditText
+                    android:id="@+id/sb6ut2sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="NA"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/sb6flsm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="NA"
+                    android:inputType="number" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:id="@+id/btn_semsubmitsm"
+            android:layout_gravity="center"
+            android:text="submit"/>
+    </LinearLayout>
+
+</ScrollView>

@@ -42,6 +42,7 @@ public class MenteeExtraCirculam extends AppCompatActivity {
         String batch = intent.getStringExtra("batch");
 
 
+
         mEvent = FirebaseDatabase.getInstance().getReference().child("Event").child(branchs).child(accadmicYear).child(division).child(batch).child(FirebaseAuth.getInstance().getUid());
 
         FirebaseRecyclerOptions<DataEvent> options =
