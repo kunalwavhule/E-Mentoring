@@ -45,6 +45,10 @@ public class AdminMentee extends AppCompatActivity {
     RecyclerView rvSem;
     SemAdapter semAdapter;
 
+    String castes[] = {"OPEN","OBC","SC","ST"};
+    String Scholarship[] = {"Applied","Approve","Not Eligible"};
+
+
   /*  TextView sem1ut1,sem1ut2,semfl,
             sb1ut1,sb1ut2,sb1fl,
             sb2ut1,sb2ut2,sb2fl,
@@ -53,7 +57,7 @@ public class AdminMentee extends AppCompatActivity {
             sb5ut1,sb5ut2,sb5fl
             ,sb6ut1,sb6ut2,sb6fl;*/
 
-    AlertDialog dialog,dialog1,dialog2,dialog4sem;
+    AlertDialog dialog,dialog1,dialog2,dialog4sem,dialogfees;
     ImageButton back,addevent,addPlacement,addsem;
     LineChart lineChart;
 
@@ -234,57 +238,10 @@ public class AdminMentee extends AppCompatActivity {
                 String semNames = SemName.getText().toString();
 
                 if (!TextUtils.isEmpty(semNames)) {
-
-            /*        if (!TextUtils.isEmpty(sb1fl)) {
-
-                        DataSemfl dataSemfl = new DataSemfl(semNames,sb1fl,sb2fl,sb3fl,sb4fl,sb5fl,sb6fl);
-                        mRef.child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(semNames).setValue(dataSemfl);
-                        Toast.makeText(getApplicationContext(),"Add the Data Successfully",Toast.LENGTH_SHORT).show();
-                    }
-
-                    if (!TextUtils.isEmpty(sN1)) {
-
-                        DataSemSubjectName dataSemSubjectName = new DataSemSubjectName(semNames,sN1,sN2,sN3,sN4,sN5,sN6);
-                        mRef.child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(semNames).setValue(dataSemSubjectName);
-                        Toast.makeText(getApplicationContext(),"Add the Data Successfully",Toast.LENGTH_SHORT).show();
-                    }
-
-                    if (!TextUtils.isEmpty(sb1ut1)) {
-
-                        DataSemUt1 dataSemUt1 = new DataSemUt1(semNames,sb1ut1,sb2ut1,sb3ut1,sb4ut1,sb5ut1,sb6ut1);
-                        mRef.child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(semNames).setValue(dataSemUt1);
-                        Toast.makeText(getApplicationContext(),"Add the Data Successfully",Toast.LENGTH_SHORT).show();
-                    }
-                    if (!TextUtils.isEmpty(sb1ut2)) {
-
-                        DataSemUt2 dataSemUt2 = new DataSemUt2(semNames,sb1ut2,sb2ut2,sb3ut2,sb4ut2,sb5ut2,sb6ut2);
-                        mRef.child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(semNames).setValue(dataSemUt2);
-                        Toast.makeText(getApplicationContext(),"Add the Data Successfully",Toast.LENGTH_SHORT).show();
-                    }
-
-
-             */
-                  /*  DataSemSubjectName dataSemSubjectName = new DataSemSubjectName(semNames,sN1,sN2,sN3,sN4,sN5,sN6);
-                    mRef.child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(semNames).setValue(dataSemSubjectName);
-
-                    DataSemUt2 dataSemUt2 = new DataSemUt2(semNames,sb1ut2,sb2ut2,sb3ut2,sb4ut2,sb5ut2,sb6ut2);
-                    mRef1.child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(semNames).setValue(dataSemUt2);
-
-                    DataSemUt1 dataSemUt1 = new DataSemUt1(semNames,sb1ut1,sb2ut1,sb3ut1,sb4ut1,sb5ut1,sb6ut1);
-                    mRef2.child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(semNames).setValue(dataSemUt1);
-
-
-                    DataSemfl dataSemfl = new DataSemfl(semNames,sb1fl,sb2fl,sb3fl,sb4fl,sb5fl,sb6fl);
-                    mRef3.child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(semNames).setValue(dataSemfl);
-*/
                    DataSemSubject dataSemSubject = new DataSemSubject(semNames,sN1,sN2,sN3,sN4,sN5,sN6,sb1ut1,sb2ut1,sb3ut1,sb4ut1,sb5ut1,sb6ut1,sb1ut2,sb2ut2,sb3ut2,sb4ut2,sb5ut2,sb6ut2,sb1fl,sb2fl,sb3fl,sb4fl,sb5fl,sb6fl);
                     mRef.child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(semNames).setValue(dataSemSubject);
-
-
                 }
-
                 dialog4sem.dismiss();
-
             }
         });
         builderSem.setView(view4);
@@ -297,6 +254,7 @@ public class AdminMentee extends AppCompatActivity {
         });
 
 
+        //AlertDialog box Extra
 
         //AlertDialog Box Extra Circular Activity
         AlertDialog.Builder builderEvent = new AlertDialog.Builder(this);
