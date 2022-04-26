@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+<com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Please select the Subject No."
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spnalertsbjno"
+            android:inputType="none">
+
+        </AutoCompleteTextView>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:id="@+id/alertSubjectName"
+        android:background="@drawable/edit_background"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="50dp"
+        android:inputType="number"
+        android:lines="1"
+        android:drawablePadding="10dp"
+        android:hint="SubjectName"
+        android:paddingLeft="10dp" />
+
+    <EditText
+        android:id="@+id/alertPercentage"
+        android:background="@drawable/edit_background"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="50dp"
+        android:inputType="number"
+        android:lines="1"
+        android:drawablePadding="10dp"
+        android:hint="Percentage"
+        android:paddingLeft="10dp" />
+
+    <EditText
+        android:id="@+id/alertTotalClass"
+        android:background="@drawable/edit_background"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="50dp"
+        android:inputType="number"
+        android:lines="1"
+        android:drawablePadding="10dp"
+        android:hint="Total Class"
+        android:paddingLeft="10dp" />
+
+    <EditText
+        android:id="@+id/alertPrasentClass"
+        android:background="@drawable/edit_background"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="50dp"
+        android:inputType="number"
+        android:lines="1"
+        android:drawablePadding="10dp"
+        android:hint="Prasent Class"
+        android:paddingLeft="10dp" />
+
+    <EditText
+        android:id="@+id/alertAbsentClass"
+        android:background="@drawable/edit_background"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="50dp"
+        android:inputType="number"
+        android:lines="1"
+        android:drawablePadding="10dp"
+        android:hint="Absent Class"
+        android:paddingLeft="10dp" />
+
+    <Button
+        android:id="@+id/btnsubmitattendence"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content"
+        android:text="Submit" />
+
+</LinearLayout>
+
+</ScrollView>
