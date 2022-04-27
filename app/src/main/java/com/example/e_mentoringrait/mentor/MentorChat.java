@@ -49,6 +49,7 @@ public class MentorChat extends AppCompatActivity {
         String batch = getIntent().getStringExtra("batch");
         String suid = getIntent().getStringExtra("menteeUid");
         String tuid = getIntent().getStringExtra("mentorUid");
+        getSupportActionBar().setTitle("Mentor Chat");
 
         mChat = FirebaseDatabase.getInstance().getReference().child("Chat").child(branch).child(accadmicyear).child(div).child(batch).child(FirebaseAuth.getInstance().getUid()).child(batch).child(suid);
 

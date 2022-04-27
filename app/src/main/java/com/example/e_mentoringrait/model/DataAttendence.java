@@ -2,7 +2,7 @@ package com.example.e_mentoringrait.model;
 
 public class DataAttendence {
     String SubjectName;
-    String Percentage;
+    int Percentage;
     int TotalClass;
     int PrasentClass;
     int AbsentClass;
@@ -10,7 +10,7 @@ public class DataAttendence {
     public DataAttendence() {
     }
 
-    public DataAttendence(String subjectName, String percentage, int totalClass, int prasentClass, int absentClass) {
+    public DataAttendence(String subjectName, int percentage, int totalClass, int prasentClass, int absentClass) {
         SubjectName = subjectName;
         Percentage = percentage;
         TotalClass = totalClass;
@@ -26,11 +26,11 @@ public class DataAttendence {
         SubjectName = subjectName;
     }
 
-    public String getPercentage() {
+    public int getPercentage() {
         return Percentage;
     }
 
-    public void setPercentage(String percentage) {
+    public void setPercentage(int percentage) {
         Percentage = percentage;
     }
 
@@ -58,3 +58,4 @@ public class DataAttendence {
         AbsentClass = absentClass;
     }
 }
+

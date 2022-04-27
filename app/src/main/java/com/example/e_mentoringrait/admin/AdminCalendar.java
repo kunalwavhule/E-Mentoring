@@ -38,6 +38,7 @@ public class AdminCalendar extends AppCompatActivity {
         startTime = findViewById(R.id.startTime);
         endTime = findViewById(R.id.endTime);
         className = findViewById(R.id.className);
+        getSupportActionBar().setTitle("Admin TimeTable");
         classRoom = findViewById(R.id.classRoom);
         classType = findViewById(R.id.classType);
         instructerName = findViewById(R.id.instructerName);

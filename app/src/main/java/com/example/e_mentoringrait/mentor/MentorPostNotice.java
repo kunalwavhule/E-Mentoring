@@ -26,6 +26,7 @@ public class MentorPostNotice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentor_post_notice);
         post = findViewById(R.id.post);
+        getSupportActionBar().setTitle("Mentor post notice");
         btnpost = findViewById(R.id.btnpost);
         Intent intent = getIntent();
         final String branch = intent.getStringExtra("branch");

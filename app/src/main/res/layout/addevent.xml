@@ -62,7 +62,7 @@
             android:inputType="textMultiLine"
             android:lines="4"
             android:drawablePadding="10dp"
-            android:hint="Hsc"
+            android:hint="Description"
             android:paddingLeft="10dp" />
 <Button
     android:layout_width="wrap_content"

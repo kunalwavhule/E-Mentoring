@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EMentoringRAIT">
         <activity
+            android:name=".mentee.MenteeAttendence"
+            android:exported="false" />
+        <activity
+            android:name=".mentee.MenteeFees"
+            android:exported="false" />
+        <activity
             android:name=".mentee.MenteeGrades"
             android:exported="false" />
         <activity

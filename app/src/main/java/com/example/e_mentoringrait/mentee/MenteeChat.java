@@ -37,6 +37,7 @@ public class MenteeChat extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentee_chat);
         rvChat = findViewById(R.id.rvChat);
+        getSupportActionBar().setTitle("Mentee Chat");
         rvChat.setLayoutManager(new LinearLayoutManager(this));
         esmsg = findViewById(R.id.esmsg);
         send = findViewById(R.id.isbtn);

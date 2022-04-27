@@ -32,6 +32,7 @@ public class MenteeDashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentee_dashboard);
+        getSupportActionBar().setTitle("Mentee Dashboard");
         one = findViewById(R.id.textView17);
         two = findViewById(R.id.textView18);
         three = findViewById(R.id.textView19);
@@ -180,6 +181,16 @@ public class MenteeDashboard extends AppCompatActivity {
     public void Grades(View view) {
 
         Intent myIntent = new Intent(this, MenteeGrades.class);
+        myIntent.putExtra("branch", one.getText().toString());
+        myIntent.putExtra("accadmicYear", two.getText().toString());
+        myIntent.putExtra("division", three.getText().toString());
+        myIntent.putExtra("batch", four.getText().toString());
+        startActivity(myIntent);
+
+    }
+
+    public void Fees(View view) {
+        Intent myIntent = new Intent(this, MenteeFees.class);
         myIntent.putExtra("branch", one.getText().toString());
         myIntent.putExtra("accadmicYear", two.getText().toString());
         myIntent.putExtra("division", three.getText().toString());

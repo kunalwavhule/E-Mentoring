@@ -1,16 +1,16 @@
 package com.example.e_mentoringrait.model;
 
-public class DataFees {
+public class DataTest {
     int Totalfees;
     int Paidfees;
     int Balancefees;
     String Scholarship;
     String Category;
 
-    public DataFees() {
+    public DataTest() {
     }
 
-    public DataFees(int totalfees, int paidfees, int balancefees, String scholarship, String category) {
+    public DataTest(int totalfees, int paidfees, int balancefees, String scholarship, String category) {
         Totalfees = totalfees;
         Paidfees = paidfees;
         Balancefees = balancefees;

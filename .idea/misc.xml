@@ -24,10 +24,12 @@
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_forget_password.xml" value="0.1" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_main.xml" value="0.16893115942028986" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_mentee_attendence.xml" value="0.1796875" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_mentee_calendar.xml" value="0.165625" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_mentee_chat.xml" value="0.1" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_mentee_dashboard.xml" value="0.21428571428571427" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_mentee_extra_circulam.xml" value="0.1796875" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_mentee_fees.xml" value="0.1796875" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_mentee_grades.xml" value="0.10461956521739131" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_mentee_notice.xml" value="0.1" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_mentee_profile.xml" value="0.1" />
@@ -41,7 +43,7 @@
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/addevent.xml" value="0.26262626262626265" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/addplacementitem.xml" value="0.1" />
-        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/alertattendenceitem.xml" value="0.1" />
+        <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/alertattendenceitem.xml" value="0.22" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/alertfeesitem.xml" value="0.1" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/alertplacementitem.xml" value="0.1796875" />
         <entry key="..\:/EMentoringRAIT/app/src/main/res/layout/alertsemitem.xml" value="0.1796875" />

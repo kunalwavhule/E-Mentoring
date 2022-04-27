@@ -18,6 +18,8 @@ public class AdminDivision extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_division);
 
+
+        getSupportActionBar().setTitle("Admin Division");
         Adone = findViewById(R.id.Adione);
         Adtwo = findViewById(R.id.Aditwo);
         Adthree = findViewById(R.id.Adithree);

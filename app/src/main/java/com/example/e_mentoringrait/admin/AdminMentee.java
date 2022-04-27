@@ -19,14 +19,17 @@ import android.text.TextUtils;
 import com.example.e_mentoringrait.R;
 import com.example.e_mentoringrait.adapter.ChatAdapter;
 import com.example.e_mentoringrait.adapter.SemAdapter;
+import com.example.e_mentoringrait.model.DataAttendence;
 import com.example.e_mentoringrait.model.DataChat;
 import com.example.e_mentoringrait.model.DataEvent;
+import com.example.e_mentoringrait.model.DataFees;
 import com.example.e_mentoringrait.model.DataPlacement;
 import com.example.e_mentoringrait.model.DataSemSubject;
 import com.example.e_mentoringrait.model.DataSemSubjectName;
 import com.example.e_mentoringrait.model.DataSemUt1;
 import com.example.e_mentoringrait.model.DataSemUt2;
 import com.example.e_mentoringrait.model.DataSemfl;
+import com.example.e_mentoringrait.model.DataTest;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
@@ -41,14 +44,10 @@ import java.util.ArrayList;
 
 public class AdminMentee extends AppCompatActivity {
     TextView textView,afullname,amobileno,aemail,abranch,arollno,areligion,acaste;
-
     RecyclerView rvSem;
     SemAdapter semAdapter;
-
     String castes[] = {"OPEN","OBC","SC","ST"};
     String Scholarship[] = {"Applied","Approve","Not Eligible"};
-
-
   /*  TextView sem1ut1,sem1ut2,semfl,
             sb1ut1,sb1ut2,sb1fl,
             sb2ut1,sb2ut2,sb2fl,
@@ -57,10 +56,9 @@ public class AdminMentee extends AppCompatActivity {
             sb5ut1,sb5ut2,sb5fl
             ,sb6ut1,sb6ut2,sb6fl;*/
 
-    AlertDialog dialog,dialog1,dialog2,dialog4sem,dialogfees;
-    ImageButton back,addevent,addPlacement,addsem;
+    AlertDialog dialog,dialog1,dialog2,dialog4sem,dialogfees,dialogattend;
+    ImageButton back,addevent,addPlacement,addsem,addfees,addattendence;
     LineChart lineChart;
-
     private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference mRef = mDatabase.getReference();
     private DatabaseReference mSem;
@@ -72,9 +70,12 @@ public class AdminMentee extends AppCompatActivity {
         setContentView(R.layout.activity_admin_mentee);
         addPlacement = findViewById(R.id.addplacement);
         rvSem = findViewById(R.id.rvSem);
+        getSupportActionBar().setTitle("Admin Student Detail");
         rvSem.setLayoutManager(new LinearLayoutManager(this));
         addevent = findViewById(R.id.addevnt);
         addsem = findViewById(R.id.addsem);
+        addfees = findViewById(R.id.addfees);
+        addattendence = findViewById(R.id.addAttendence);
         textView = findViewById(R.id.t1);
         afullname = findViewById(R.id.FullNameam);
         amobileno = findViewById(R.id.StudentNumberam);
@@ -84,8 +85,6 @@ public class AdminMentee extends AppCompatActivity {
         areligion = findViewById(R.id.spnReligionam);
         acaste = findViewById(R.id.spnCasteam);
         back = findViewById(R.id.back);
-
-
 
         //sem 1 subject reference
      /*   sem1ut1 = findViewById(R.id.sm1ut1);
@@ -153,7 +152,6 @@ public class AdminMentee extends AppCompatActivity {
         });
 
         mSem = FirebaseDatabase.getInstance().getReference().child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid);
-
         FirebaseRecyclerOptions<DataSemSubject> options =
                 new FirebaseRecyclerOptions.Builder<DataSemSubject>()
                         .setQuery(mSem, DataSemSubject.class)
@@ -162,7 +160,6 @@ public class AdminMentee extends AppCompatActivity {
         rvSem.setAdapter(semAdapter);
 
         //AlerDialog box Sem
-
         AlertDialog.Builder builderSem = new AlertDialog.Builder(this);
         builderSem.setTitle("Enter the Details");
         View view4 = getLayoutInflater().inflate(R.layout.alertsemitem,null);
@@ -201,7 +198,6 @@ public class AdminMentee extends AppCompatActivity {
         Sb6fl = view4.findViewById(R.id.sb6flsm);
 
         SemName = view4.findViewById(R.id.semNamesm);
-
         Button semsubmit = view4.findViewById(R.id.btn_semsubmitsm);
         semsubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -254,11 +250,50 @@ public class AdminMentee extends AppCompatActivity {
         });
 
 
-        //AlertDialog box Extra
+        //AlertDialog Box Fees
+        AlertDialog.Builder builderFees = new AlertDialog.Builder(this);
+        builderFees.setTitle("Enter the Fees Detail");
+        View viewfees = getLayoutInflater().inflate(R.layout.alertfeesitem,null);
+        EditText alertToatalfees,alertPaidfees,alertScholarshipfees,alertCategoryfees;
+
+        alertToatalfees = viewfees.findViewById(R.id.alertToatalfees);
+        alertPaidfees = viewfees.findViewById(R.id.alertPaidfees);
+        alertScholarshipfees = viewfees.findViewById(R.id.alertScholarshipfees);
+        alertCategoryfees = viewfees.findViewById(R.id.alertCategoryfees);
+
+        Button submitfees = viewfees.findViewById(R.id.btnsubmitfees);
+
+        submitfees.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String value1= alertToatalfees.getText().toString();
+                String value2= alertPaidfees.getText().toString();
+                int Toatalfees = Integer.parseInt(String.valueOf(value1));
+                int Paidfees = Integer.parseInt(String.valueOf(value2));
+                String Scholarshipfees = alertScholarshipfees.getText().toString();
+                String Categoryfees = alertCategoryfees.getText().toString();
+
+                int balanceint = Toatalfees - Paidfees;
+                String key = mRef.push().getKey();
+                DataFees dataFees = new DataFees(Toatalfees,Paidfees,balanceint,Scholarshipfees,Categoryfees);
+                mRef.child("Fees").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(key).setValue(dataFees);
+                dialogfees.dismiss();
+            }
+        });
+        builderFees.setView(viewfees);
+        dialogfees = builderFees.create();
+        addfees.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogfees.show();
+            }
+        });
+
+
 
         //AlertDialog Box Extra Circular Activity
         AlertDialog.Builder builderEvent = new AlertDialog.Builder(this);
-        builderEvent.setTitle("Enter the Mark");
+        builderEvent.setTitle("Enter the Event Detail");
         View view1 = getLayoutInflater().inflate(R.layout.addevent,null);
         EditText eventName,eventTypes,eventOrganizer,eventDiscription,eventDate;
         eventName = view1.findViewById(R.id.eventNameadd);
@@ -293,9 +328,8 @@ public class AdminMentee extends AppCompatActivity {
 
 
         //AlertDialog Box For Placement
-
         AlertDialog.Builder builderPlacement = new AlertDialog.Builder(this);
-        builderPlacement.setTitle("Enter the Detail");
+        builderPlacement.setTitle("Enter the Company Detail");
         View view2 = getLayoutInflater().inflate(R.layout.alertplacementitem,null);
         EditText companyNameAlert,companyPositionAlert,companyLoacationAlert,companyPackageAlert;
         companyNameAlert = view2.findViewById(R.id.companyNameAlert);
@@ -319,16 +353,13 @@ public class AdminMentee extends AppCompatActivity {
             }
         });
         builderPlacement.setView(view2);
-
         dialog2 = builderPlacement.create();
-
         addPlacement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog2.show();
             }
         });
-
 
 /*
 
@@ -413,6 +444,53 @@ public class AdminMentee extends AppCompatActivity {
         lineChart.setData(lineData);
         lineChart.animateY(2000);
    */
+
+    //AlertDialog Box For Attendence
+    AlertDialog.Builder builderattend = new AlertDialog.Builder(this);
+    builderattend.setTitle("Enter the Lecture Details");
+    View viewattend = getLayoutInflater().inflate(R.layout.alertattendenceitem,null);
+    EditText SubName,percent,totalclass,prasentclass,absentclass,subNo;
+    SubName = viewattend.findViewById(R.id.alertSubjectName);
+    subNo = viewattend.findViewById(R.id.alertSubno);
+    percent = viewattend.findViewById(R.id.alertPercentage);
+    totalclass = viewattend.findViewById(R.id.alertTotalClass);
+    prasentclass = viewattend.findViewById(R.id.alertPrasentClass);
+    absentclass = viewattend.findViewById(R.id.alertAbsentClass);
+    Button attendsubmit = viewattend.findViewById(R.id.btnsubmitattendence);
+    attendsubmit.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            String SubNameatt = SubName.getText().toString();
+            String value3 = percent.getText().toString();
+            String value4 = totalclass.getText().toString();
+            String value5 = absentclass.getText().toString();
+            String value6 = prasentclass.getText().toString();
+            String value7 = subNo.getText().toString();
+
+
+            int subNoatt = Integer.parseInt(String.valueOf(value7));
+            int percentatt = Integer.parseInt(String.valueOf(value3));
+            int totalclassatt = Integer.parseInt(String.valueOf(value4));
+            int absentclassatt = Integer.parseInt(String.valueOf(value5));
+            int prasentclassatt = Integer.parseInt(String.valueOf(value6));
+            String key = mRef.push().getKey();
+            DataAttendence dataAttendence = new DataAttendence(SubNameatt,percentatt,totalclassatt,prasentclassatt,absentclassatt);
+            mRef.child("Attendence").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(String.valueOf(subNoatt)).setValue(dataAttendence);
+            dialogattend.dismiss();
+
+        }
+    });
+
+    builderattend.setView(viewattend);
+    dialogattend = builderattend.create();
+    addattendence.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            dialogattend.show();
+        }
+    });
+
+
     }
 
     @Override

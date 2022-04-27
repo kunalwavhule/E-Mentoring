@@ -32,6 +32,8 @@ public class MenteeExtraCirculam extends AppCompatActivity {
         setContentView(R.layout.activity_mentee_extra_circulam);
         rvExtracirculam = findViewById(R.id.rvextracirculam);
         rvExtracirculam.setLayoutManager(new LinearLayoutManager(this));
+        getSupportActionBar().setTitle("Mentee Extra Circulam");
+
 
         rvPlacement = findViewById(R.id.rvplacement);
         rvPlacement.setLayoutManager(new LinearLayoutManager(this));

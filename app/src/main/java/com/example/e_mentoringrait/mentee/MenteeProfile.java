@@ -33,6 +33,7 @@ public class MenteeProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentee_profile);
+        getSupportActionBar().setTitle("Mentee Profile");
         FullName = findViewById(R.id.FullName);
         MotherName = findViewById(R.id.MotherName);
         Email = findViewById(R.id.Email);

@@ -4,27 +4,26 @@
     android:orientation="vertical"
     android:layout_height="match_parent">
 
+
 <LinearLayout
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent">
 
-<com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
+    <EditText
+        android:id="@+id/alertSubno"
+        android:background="@drawable/edit_background"
         android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="Please select the Subject No."
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-        <AutoCompleteTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/spnalertsbjno"
-            android:inputType="none">
-
-        </AutoCompleteTextView>
-    </com.google.android.material.textfield.TextInputLayout>
+        android:layout_height="50dp"
+        android:inputType="number"
+        android:lines="1"
+        android:drawablePadding="10dp"
+        android:hint="Enter Subject No"
+        android:paddingLeft="10dp" />
 
     <EditText
         android:id="@+id/alertSubjectName"
@@ -34,7 +33,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_height="50dp"
-        android:inputType="number"
+        android:inputType="text"
         android:lines="1"
         android:drawablePadding="10dp"
         android:hint="SubjectName"
@@ -105,5 +104,7 @@
         android:text="Submit" />
 
 </LinearLayout>
+
+
 
 </ScrollView>

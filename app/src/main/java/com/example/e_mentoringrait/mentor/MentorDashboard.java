@@ -41,6 +41,7 @@ public class MentorDashboard extends AppCompatActivity {
         batch1 = findViewById(R.id.batch1);
         batch2 = findViewById(R.id.batch2);
         batch3 = findViewById(R.id.batch3);
+        getSupportActionBar().setTitle("Mentor Dashboard");
         batch4 = findViewById(R.id.batch4);
         MentorName = findViewById(R.id.MentorName);
 

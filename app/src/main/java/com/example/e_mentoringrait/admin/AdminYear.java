@@ -22,7 +22,7 @@ public class AdminYear extends AppCompatActivity {
         Cbe = findViewById(R.id.Aybe);
         Intent intent = getIntent();
         final String value = intent.getStringExtra("adb");
-        getSupportActionBar().setTitle(value);
+        getSupportActionBar().setTitle("Admin "+value);
 
         Cfe.setOnClickListener(new View.OnClickListener() {
             @Override

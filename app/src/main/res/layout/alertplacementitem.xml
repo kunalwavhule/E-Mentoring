@@ -54,7 +54,7 @@
         android:lines="1"
         android:drawableLeft="@drawable/ic_baseline_money_24"
         android:drawablePadding="10dp"
-        android:hint="Enter the Location"
+        android:hint="Enter the Salary"
         android:paddingLeft="10dp" />
 
 <Button

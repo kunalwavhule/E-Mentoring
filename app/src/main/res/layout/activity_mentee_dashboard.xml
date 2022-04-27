@@ -245,6 +245,7 @@
                         android:layout_height="150dp"
                         android:layout_margin="10dp"
                         app:cardElevation="5dp"
+                        android:onClick="Fees"
                         android:layout_marginBottom="50dp"
                         tools:ignore="OnClick">
 

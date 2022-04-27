@@ -30,7 +30,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/orange"
+            android:background="@drawable/edit_background"
             android:id="@+id/esmsg"/>
     </androidx.cardview.widget.CardView>
 
@@ -43,7 +43,7 @@
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/ic_ee"
+            android:background="@drawable/ic_chat"
             android:id="@+id/isbtn"/>
     </androidx.cardview.widget.CardView>
 

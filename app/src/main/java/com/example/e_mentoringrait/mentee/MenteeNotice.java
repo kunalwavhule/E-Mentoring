@@ -28,6 +28,8 @@ public class MenteeNotice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentee_notice);
         rvNotice = findViewById(R.id.rvNotice);
+        getSupportActionBar().setTitle("Mentee Notice");
+
         rvNotice.setLayoutManager(new LinearLayoutManager(this));
         Intent intent = getIntent();
         String branchs = intent.getStringExtra("branch");
