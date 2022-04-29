@@ -27,11 +27,11 @@ public class AttendenceAdapter extends FirebaseRecyclerAdapter<DataAttendence,At
 
     @Override
     protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull DataAttendence model) {
-        holder.SubjectName.setText(model.getSubjectName());
-        holder.Percentage.setText(String.valueOf(model.getPercentage()));
-        holder.TotalClass.setText(String.valueOf(model.getTotalClass()));
-        holder.PrasentClass.setText(String.valueOf(model.getPrasentClass()));
-        holder.AbsentClass.setText(String.valueOf(model.getAbsentClass()));
+        holder.SubjectName.setText("Subject Name : "+model.getSubjectName());
+        holder.Percentage.setText("Percentage : "+String.valueOf(model.getPercentage())+"%");
+        holder.TotalClass.setText("Total Class : "+String.valueOf(model.getTotalClass()));
+        holder.PrasentClass.setText("Prasent Class : "+String.valueOf(model.getPrasentClass()));
+        holder.AbsentClass.setText("Absent Class : "+String.valueOf(model.getAbsentClass()));
     }
 
     @NonNull

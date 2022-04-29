@@ -11,19 +11,6 @@
     android:layout_height="match_parent">
 
 
-    <EditText
-        android:id="@+id/alertSubno"
-        android:background="@drawable/edit_background"
-        android:layout_marginTop="15dp"
-        android:layout_width="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_height="50dp"
-        android:inputType="number"
-        android:lines="1"
-        android:drawablePadding="10dp"
-        android:hint="Enter Subject No"
-        android:paddingLeft="10dp" />
 
     <EditText
         android:id="@+id/alertSubjectName"
@@ -39,19 +26,6 @@
         android:hint="SubjectName"
         android:paddingLeft="10dp" />
 
-    <EditText
-        android:id="@+id/alertPercentage"
-        android:background="@drawable/edit_background"
-        android:layout_marginTop="15dp"
-        android:layout_width="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_height="50dp"
-        android:inputType="number"
-        android:lines="1"
-        android:drawablePadding="10dp"
-        android:hint="Percentage"
-        android:paddingLeft="10dp" />
 
     <EditText
         android:id="@+id/alertTotalClass"
@@ -81,19 +55,6 @@
         android:hint="Prasent Class"
         android:paddingLeft="10dp" />
 
-    <EditText
-        android:id="@+id/alertAbsentClass"
-        android:background="@drawable/edit_background"
-        android:layout_marginTop="15dp"
-        android:layout_width="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_height="50dp"
-        android:inputType="number"
-        android:lines="1"
-        android:drawablePadding="10dp"
-        android:hint="Absent Class"
-        android:paddingLeft="10dp" />
 
     <Button
         android:id="@+id/btnsubmitattendence"

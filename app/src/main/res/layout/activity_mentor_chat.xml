@@ -48,4 +48,9 @@
 
     </androidx.cardview.widget.CardView>
 
+    <TextView
+        android:id="@+id/mnamechat"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
 </RelativeLayout>

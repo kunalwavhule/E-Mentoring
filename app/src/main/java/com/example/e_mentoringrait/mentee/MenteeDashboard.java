@@ -51,7 +51,7 @@ public class MenteeDashboard extends AppCompatActivity {
                 String division = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("division").getValue(String.class);
                 String fullName = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("fullName").getValue(String.class);
                 String rollNo = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("rollNo").getValue(String.class);
-                String mentorid = snapshot.child("User").child(FirebaseAuth.getInstance().getUid()).child("mentorUid").getValue(String.class);
+                String mentorid = snapshot.child("mentor").child(branch).child(accadmicYear).child(division).child(batch).child("uid").getValue(String.class);
 
                 one.setText(branch);
                 two.setText(accadmicYear);
@@ -74,7 +74,7 @@ public class MenteeDashboard extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId()){
                     case R.id.notes:
-                        Intent i = new Intent(getApplicationContext(), MenteeExtraCirculam.class);
+                        Intent i = new Intent(getApplicationContext(), MenteeAttendence.class);
                         i.putExtra("branch", one.getText().toString());
                         i.putExtra("accadmicYear", two.getText().toString());
                         i.putExtra("division", three.getText().toString());
@@ -90,6 +90,8 @@ public class MenteeDashboard extends AppCompatActivity {
                         myIntent.putExtra("division", three.getText().toString());
                         myIntent.putExtra("batch", four.getText().toString());
                         myIntent.putExtra("mentorUid", mentorUid.getText().toString());
+                        myIntent.putExtra("sname", sname.getText().toString());
+
                         startActivity(myIntent);
 
                         return true;
@@ -140,13 +142,6 @@ public class MenteeDashboard extends AppCompatActivity {
         mDatabase.addValueEventListener(postListener);
 
 
-        about.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-
-                return false;
-            }
-        });
         logout.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {

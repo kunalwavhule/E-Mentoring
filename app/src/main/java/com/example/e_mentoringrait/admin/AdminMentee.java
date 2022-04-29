@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.lang.Integer;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -17,7 +18,11 @@ import android.widget.Toast;
 import android.text.TextUtils;
 
 import com.example.e_mentoringrait.R;
+import com.example.e_mentoringrait.adapter.AttendenceAdapter;
 import com.example.e_mentoringrait.adapter.ChatAdapter;
+import com.example.e_mentoringrait.adapter.EventAdapter;
+import com.example.e_mentoringrait.adapter.FeesAdapter;
+import com.example.e_mentoringrait.adapter.PlacementAdapter;
 import com.example.e_mentoringrait.adapter.SemAdapter;
 import com.example.e_mentoringrait.model.DataAttendence;
 import com.example.e_mentoringrait.model.DataChat;
@@ -44,8 +49,12 @@ import java.util.ArrayList;
 
 public class AdminMentee extends AppCompatActivity {
     TextView textView,afullname,amobileno,aemail,abranch,arollno,areligion,acaste;
-    RecyclerView rvSem;
+    RecyclerView rvSem,rvAttend,rvFees,rvEvent,rvPlace;
     SemAdapter semAdapter;
+    AttendenceAdapter attendenceAdapter;
+    FeesAdapter feesAdapter;
+    EventAdapter eventAdapter;
+    PlacementAdapter placementAdapter;
     String castes[] = {"OPEN","OBC","SC","ST"};
     String Scholarship[] = {"Applied","Approve","Not Eligible"};
   /*  TextView sem1ut1,sem1ut2,semfl,
@@ -61,7 +70,7 @@ public class AdminMentee extends AppCompatActivity {
     LineChart lineChart;
     private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference mRef = mDatabase.getReference();
-    private DatabaseReference mSem;
+    private DatabaseReference mSem,mAttend,mFees,mEvent,mPlace;
 
 
     @Override
@@ -70,8 +79,16 @@ public class AdminMentee extends AppCompatActivity {
         setContentView(R.layout.activity_admin_mentee);
         addPlacement = findViewById(R.id.addplacement);
         rvSem = findViewById(R.id.rvSem);
+        rvAttend = findViewById(R.id.rvattendencead);
+        rvFees = findViewById(R.id.rvFeesad);
+        rvEvent = findViewById(R.id.rvextracirculamad);
+        rvPlace = findViewById(R.id.rvplacementad);
         getSupportActionBar().setTitle("Admin Student Detail");
         rvSem.setLayoutManager(new LinearLayoutManager(this));
+        rvAttend.setLayoutManager(new LinearLayoutManager(this));
+        rvFees.setLayoutManager(new LinearLayoutManager(this));
+        rvEvent.setLayoutManager(new LinearLayoutManager(this));
+        rvPlace.setLayoutManager(new LinearLayoutManager(this));
         addevent = findViewById(R.id.addevnt);
         addsem = findViewById(R.id.addsem);
         addfees = findViewById(R.id.addfees);
@@ -158,6 +175,46 @@ public class AdminMentee extends AppCompatActivity {
                         .build();
         semAdapter = new SemAdapter(options);
         rvSem.setAdapter(semAdapter);
+
+        mAttend = FirebaseDatabase.getInstance().getReference().child("Attendence").child(branch).child(accadmicyear).child(div).child(batch).child(uid);
+
+        FirebaseRecyclerOptions<DataAttendence> optionsattend =
+                new FirebaseRecyclerOptions.Builder<DataAttendence>()
+                        .setQuery(mAttend, DataAttendence.class)
+                        .build();
+        attendenceAdapter = new AttendenceAdapter(optionsattend);
+        rvAttend.setAdapter(attendenceAdapter);
+
+        mFees = FirebaseDatabase.getInstance().getReference().child("Fees").child(branch).child(accadmicyear).child(div).child(batch).child(uid);
+
+        FirebaseRecyclerOptions<DataFees> optionsfees =
+                new FirebaseRecyclerOptions.Builder<DataFees>()
+                        .setQuery(mFees, DataFees.class)
+                        .build();
+        feesAdapter = new FeesAdapter(optionsfees);
+        rvFees.setAdapter(feesAdapter);
+
+
+
+        mEvent = FirebaseDatabase.getInstance().getReference().child("Event").child(branch).child(accadmicyear).child(div).child(batch).child(uid);
+
+        FirebaseRecyclerOptions<DataEvent> optionsevent =
+                new FirebaseRecyclerOptions.Builder<DataEvent>()
+                        .setQuery(mEvent, DataEvent.class)
+                        .build();
+        eventAdapter = new EventAdapter(optionsevent);
+        rvEvent.setAdapter(eventAdapter);
+
+
+
+        mPlace = FirebaseDatabase.getInstance().getReference().child("Placement").child(branch).child(accadmicyear).child(div).child(batch).child(uid);
+
+        FirebaseRecyclerOptions<DataPlacement> optionsplace =
+                new FirebaseRecyclerOptions.Builder<DataPlacement>()
+                        .setQuery(mPlace, DataPlacement.class)
+                        .build();
+        placementAdapter = new PlacementAdapter(optionsplace);
+        rvPlace.setAdapter(placementAdapter);
 
         //AlerDialog box Sem
         AlertDialog.Builder builderSem = new AlertDialog.Builder(this);
@@ -255,14 +312,11 @@ public class AdminMentee extends AppCompatActivity {
         builderFees.setTitle("Enter the Fees Detail");
         View viewfees = getLayoutInflater().inflate(R.layout.alertfeesitem,null);
         EditText alertToatalfees,alertPaidfees,alertScholarshipfees,alertCategoryfees;
-
         alertToatalfees = viewfees.findViewById(R.id.alertToatalfees);
         alertPaidfees = viewfees.findViewById(R.id.alertPaidfees);
         alertScholarshipfees = viewfees.findViewById(R.id.alertScholarshipfees);
         alertCategoryfees = viewfees.findViewById(R.id.alertCategoryfees);
-
         Button submitfees = viewfees.findViewById(R.id.btnsubmitfees);
-
         submitfees.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -449,35 +503,29 @@ public class AdminMentee extends AppCompatActivity {
     AlertDialog.Builder builderattend = new AlertDialog.Builder(this);
     builderattend.setTitle("Enter the Lecture Details");
     View viewattend = getLayoutInflater().inflate(R.layout.alertattendenceitem,null);
-    EditText SubName,percent,totalclass,prasentclass,absentclass,subNo;
+    EditText SubName,totalclass,prasentclass;
     SubName = viewattend.findViewById(R.id.alertSubjectName);
-    subNo = viewattend.findViewById(R.id.alertSubno);
-    percent = viewattend.findViewById(R.id.alertPercentage);
     totalclass = viewattend.findViewById(R.id.alertTotalClass);
     prasentclass = viewattend.findViewById(R.id.alertPrasentClass);
-    absentclass = viewattend.findViewById(R.id.alertAbsentClass);
     Button attendsubmit = viewattend.findViewById(R.id.btnsubmitattendence);
     attendsubmit.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             String SubNameatt = SubName.getText().toString();
-            String value3 = percent.getText().toString();
             String value4 = totalclass.getText().toString();
-            String value5 = absentclass.getText().toString();
             String value6 = prasentclass.getText().toString();
-            String value7 = subNo.getText().toString();
-
-
-            int subNoatt = Integer.parseInt(String.valueOf(value7));
-            int percentatt = Integer.parseInt(String.valueOf(value3));
             int totalclassatt = Integer.parseInt(String.valueOf(value4));
-            int absentclassatt = Integer.parseInt(String.valueOf(value5));
-            int prasentclassatt = Integer.parseInt(String.valueOf(value6));
-            String key = mRef.push().getKey();
-            DataAttendence dataAttendence = new DataAttendence(SubNameatt,percentatt,totalclassatt,prasentclassatt,absentclassatt);
-            mRef.child("Attendence").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(String.valueOf(subNoatt)).setValue(dataAttendence);
-            dialogattend.dismiss();
 
+            int prasentclassatt = Integer.parseInt(String.valueOf(value6));
+            int absent = totalclassatt - prasentclassatt;
+            float a = totalclassatt;
+            float b = prasentclassatt;
+            float percent = b/a * 100;
+
+            String key = mRef.push().getKey();
+            DataAttendence dataAttendence = new DataAttendence(SubNameatt,percent,totalclassatt,prasentclassatt,absent);
+            mRef.child("Attendence").child(branch).child(accadmicyear).child(div).child(batch).child(uid).child(SubNameatt).setValue(dataAttendence);
+            dialogattend.dismiss();
         }
     });
 
@@ -491,17 +539,26 @@ public class AdminMentee extends AppCompatActivity {
     });
 
 
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         semAdapter.startListening();
+        attendenceAdapter.startListening();
+        feesAdapter.startListening();
+        eventAdapter.startListening();
+        placementAdapter.startListening();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         semAdapter.stopListening();
+        attendenceAdapter.stopListening();
+        feesAdapter.stopListening();
+        eventAdapter.stopListening();
+        placementAdapter.stopListening();
     }
 }

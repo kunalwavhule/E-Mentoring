@@ -47,6 +47,7 @@ public class MenteeChat extends AppCompatActivity {
         String division = intent.getStringExtra("division");
         String batch = intent.getStringExtra("batch");
         String mentorUid = intent.getStringExtra("mentorUid");
+        String sname = intent.getStringExtra("sname");
 
 
         mChat = FirebaseDatabase.getInstance().getReference().child("Chat").child(branchs).child(accadmicYear).child(division).child(batch).child(mentorUid).child(batch).child(FirebaseAuth.getInstance().getUid());
@@ -69,7 +70,7 @@ public class MenteeChat extends AppCompatActivity {
                 }else {
                     Date currentTime = Calendar.getInstance().getTime();
                     String d1 = currentTime.toString();
-                    DataChat dataChat = new DataChat(msg, "Kunal", d1);
+                    DataChat dataChat = new DataChat(msg, sname, d1);
                     mChat.child(key).setValue(dataChat);
                     esmsg.setText("");
                 }

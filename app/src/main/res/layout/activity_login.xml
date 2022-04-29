@@ -89,6 +89,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:onClick="Login"
+                android:textColor="@color/white"
                 android:background="@drawable/button_background"
                 android:text="Login" />
 

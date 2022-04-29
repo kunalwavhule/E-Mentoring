@@ -48,7 +48,7 @@
             android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:inputType="date"
+            android:inputType="text"
             android:drawablePadding="10dp"
             android:hint="Enter The Date"
             android:paddingLeft="10dp" />
