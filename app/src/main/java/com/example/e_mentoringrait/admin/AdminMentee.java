@@ -67,7 +67,6 @@ public class AdminMentee extends AppCompatActivity {
 
     AlertDialog dialog,dialog1,dialog2,dialog4sem,dialogfees,dialogattend;
     ImageButton back,addevent,addPlacement,addsem,addfees,addattendence;
-    LineChart lineChart;
     private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference mRef = mDatabase.getReference();
     private DatabaseReference mSem,mAttend,mFees,mEvent,mPlace;

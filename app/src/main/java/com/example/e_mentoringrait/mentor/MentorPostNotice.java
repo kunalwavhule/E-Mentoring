@@ -1,6 +1,8 @@
 package com.example.e_mentoringrait.mentor;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.e_mentoringrait.R;
+import com.example.e_mentoringrait.adapter.NoticeAdapter;
 import com.example.e_mentoringrait.model.DataNotice;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import java.text.DateFormat;
@@ -20,6 +24,9 @@ public class MentorPostNotice extends AppCompatActivity {
     Button btnpost;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
+    RecyclerView rvPost;
+    NoticeAdapter noticeAdapter;
+    private DatabaseReference mNotice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +36,9 @@ public class MentorPostNotice extends AppCompatActivity {
         getSupportActionBar().setTitle("Mentor post notice");
         btnpost = findViewById(R.id.btnpost);
         Intent intent = getIntent();
+        rvPost = findViewById(R.id.rvpost);
+        rvPost.setLayoutManager(new LinearLayoutManager(this));
+
         final String branch = intent.getStringExtra("branch");
         final String year = intent.getStringExtra("year");
         final String division = intent.getStringExtra("division");
@@ -49,6 +59,26 @@ public class MentorPostNotice extends AppCompatActivity {
             }
         });
 
+        mNotice = FirebaseDatabase.getInstance().getReference().child("Notice").child(branch).child(year).child(division).child(batch);
+        FirebaseRecyclerOptions<DataNotice> options =
+                new FirebaseRecyclerOptions.Builder<DataNotice>()
+                        .setQuery(mNotice, DataNotice.class)
+                        .build();
+        noticeAdapter = new NoticeAdapter(options);
+        rvPost.setAdapter(noticeAdapter);
 
-   }
+
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        noticeAdapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        noticeAdapter.stopListening();
+    }
+
 }
