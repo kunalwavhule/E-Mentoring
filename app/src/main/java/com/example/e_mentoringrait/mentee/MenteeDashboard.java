@@ -57,8 +57,8 @@ public class MenteeDashboard extends AppCompatActivity {
                 two.setText(accadmicYear);
                 three.setText(division);
                 four.setText(batch);
-                sname.setText("Name  -  "+fullName);
-                sRollno.setText(""+rollNo);
+                sname.setText(fullName);
+                sRollno.setText(rollNo);
                 mentorUid.setText(mentorid);
             }
             @Override

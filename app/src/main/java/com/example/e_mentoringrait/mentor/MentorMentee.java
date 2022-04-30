@@ -2,6 +2,8 @@ package com.example.e_mentoringrait.mentor;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -13,9 +15,20 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.e_mentoringrait.R;
+import com.example.e_mentoringrait.adapter.AttendenceAdapter;
+import com.example.e_mentoringrait.adapter.EventAdapter;
+import com.example.e_mentoringrait.adapter.FeesAdapter;
+import com.example.e_mentoringrait.adapter.PlacementAdapter;
+import com.example.e_mentoringrait.adapter.SemAdapter;
 import com.example.e_mentoringrait.admin.AdminBatch;
 import com.example.e_mentoringrait.admin.AdminYear;
 import com.example.e_mentoringrait.mentee.MenteeChat;
+import com.example.e_mentoringrait.model.DataAttendence;
+import com.example.e_mentoringrait.model.DataEvent;
+import com.example.e_mentoringrait.model.DataFees;
+import com.example.e_mentoringrait.model.DataPlacement;
+import com.example.e_mentoringrait.model.DataSemSubject;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
@@ -23,6 +36,8 @@ import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -42,6 +57,18 @@ public class MentorMentee extends AppCompatActivity {
     AlertDialog dialog;
     ImageButton back;
     LineChart lineChart;
+    RecyclerView rvSem,rvAttend,rvFees,rvEvent,rvPlace;
+
+    AttendenceAdapter attendenceAdapter;
+    SemAdapter semAdapter;
+    FeesAdapter feesAdapter;
+    EventAdapter eventAdapter;
+    PlacementAdapter placementAdapter;
+
+
+    private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference mRef = mDatabase.getReference();
+    private DatabaseReference mSem,mAttend,mFees,mEvent,mPlace;
 
 
     @Override
@@ -51,6 +78,17 @@ public class MentorMentee extends AppCompatActivity {
         getSupportActionBar().setTitle("Mentor Mentee");
 
         floatingActionButton = findViewById(R.id.chatmentor);
+        rvAttend = findViewById(R.id.rvmmattend);
+        rvFees = findViewById(R.id.rvmmfees);
+        rvEvent = findViewById(R.id.rvmmextrac);
+        rvPlace = findViewById(R.id.rvmmplacement);
+        rvSem = findViewById(R.id.rvmmsem);
+
+        rvAttend.setLayoutManager(new LinearLayoutManager(this));
+        rvFees.setLayoutManager(new LinearLayoutManager(this));
+        rvEvent.setLayoutManager(new LinearLayoutManager(this));
+        rvPlace.setLayoutManager(new LinearLayoutManager(this));
+        rvSem.setLayoutManager(new LinearLayoutManager(this));
 
         textView = findViewById(R.id.t1);
         afullname = findViewById(R.id.FullNameam);
@@ -103,6 +141,54 @@ public class MentorMentee extends AppCompatActivity {
         String div = getIntent().getStringExtra("division");
         String batch = getIntent().getStringExtra("batch");
         String uid = getIntent().getStringExtra("uid");
+
+
+        mAttend = FirebaseDatabase.getInstance().getReference().child("Attendence").child(branch).child(accadmicyear).child(div).child(batch).child(uid);
+
+        FirebaseRecyclerOptions<DataAttendence> optionsattend =
+                new FirebaseRecyclerOptions.Builder<DataAttendence>()
+                        .setQuery(mAttend, DataAttendence.class)
+                        .build();
+        attendenceAdapter = new AttendenceAdapter(optionsattend);
+        rvAttend.setAdapter(attendenceAdapter);
+
+
+        mFees = FirebaseDatabase.getInstance().getReference().child("Fees").child(branch).child(accadmicyear).child(div).child(batch).child(uid);
+
+        FirebaseRecyclerOptions<DataFees> optionsfees =
+                new FirebaseRecyclerOptions.Builder<DataFees>()
+                        .setQuery(mFees, DataFees.class)
+                        .build();
+        feesAdapter = new FeesAdapter(optionsfees);
+        rvFees.setAdapter(feesAdapter);
+
+        mEvent = FirebaseDatabase.getInstance().getReference().child("Event").child(branch).child(accadmicyear).child(div).child(batch).child(uid);
+
+        FirebaseRecyclerOptions<DataEvent> optionsevent =
+                new FirebaseRecyclerOptions.Builder<DataEvent>()
+                        .setQuery(mEvent, DataEvent.class)
+                        .build();
+        eventAdapter = new EventAdapter(optionsevent);
+        rvEvent.setAdapter(eventAdapter);
+
+        mPlace = FirebaseDatabase.getInstance().getReference().child("Placement").child(branch).child(accadmicyear).child(div).child(batch).child(uid);
+
+        FirebaseRecyclerOptions<DataPlacement> optionsplace =
+                new FirebaseRecyclerOptions.Builder<DataPlacement>()
+                        .setQuery(mPlace, DataPlacement.class)
+                        .build();
+        placementAdapter = new PlacementAdapter(optionsplace);
+        rvPlace.setAdapter(placementAdapter);
+
+        mSem = FirebaseDatabase.getInstance().getReference().child("Grades").child(branch).child(accadmicyear).child(div).child(batch).child(uid);
+        FirebaseRecyclerOptions<DataSemSubject> options =
+                new FirebaseRecyclerOptions.Builder<DataSemSubject>()
+                        .setQuery(mSem, DataSemSubject.class)
+                        .build();
+        semAdapter = new SemAdapter(options);
+        rvSem.setAdapter(semAdapter);
+
+
 
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
@@ -223,6 +309,28 @@ public class MentorMentee extends AppCompatActivity {
         LineData lineData=new LineData(lineDataSet);
         lineChart.setData(lineData);
         lineChart.animateY(2000);
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        attendenceAdapter.startListening();
+        feesAdapter.startListening();
+        eventAdapter.startListening();
+        placementAdapter.stopListening();
+        semAdapter.startListening();
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        attendenceAdapter.stopListening();
+        feesAdapter.stopListening();
+        eventAdapter.stopListening();
+        placementAdapter.stopListening();
+        semAdapter.stopListening();
 
     }
 }

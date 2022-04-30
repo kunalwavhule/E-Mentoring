@@ -1,8 +1,10 @@
 package com.example.e_mentoringrait.adapter;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,6 +14,13 @@ import com.example.e_mentoringrait.R;
 import com.example.e_mentoringrait.model.DataSemSubject;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.utils.ColorTemplate;
+
+import java.util.ArrayList;
 
 public class SemAdapter extends FirebaseRecyclerAdapter<DataSemSubject,SemAdapter.myViewHolder> {
 
@@ -57,6 +66,31 @@ public class SemAdapter extends FirebaseRecyclerAdapter<DataSemSubject,SemAdapte
         holder.Sb5fl.setText(model.getSb5fl());
         holder.Sb6fl.setText(model.getSb6fl());
 
+
+
+
+        int num1 =  Integer.parseInt(model.getSb1fl());
+        int num2 =  Integer.parseInt(model.getSb2fl());
+        int num3 =  Integer.parseInt(model.getSb3fl());
+        int num4 =  Integer.parseInt(model.getSb4fl());
+        int num5 =  Integer.parseInt(model.getSb5fl());
+        int num6 =  Integer.parseInt(model.getSb6fl());
+        ArrayList<Entry> information=new ArrayList<>();
+        information.add(new Entry(20,num1));
+        information.add(new Entry(40,num2));
+        information.add(new Entry(60,num3));
+        information.add(new Entry(80,num4));
+        information.add(new Entry(100,num5));
+        information.add(new Entry(120,num6));
+        LineDataSet lineDataSet=new LineDataSet(information,"Information");
+        lineDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+        lineDataSet.setValueTextColor(Color.BLACK);
+        lineDataSet.setValueTextSize(20f);
+        LineData lineData=new LineData(lineDataSet);
+        holder.lineCharts.setData(lineData);
+        holder.lineCharts.animateY(2000);
+
+
     }
 
     @NonNull
@@ -72,10 +106,13 @@ public class SemAdapter extends FirebaseRecyclerAdapter<DataSemSubject,SemAdapte
                 Sb1ut1 , Sb2ut1, Sb3ut1, Sb4ut1,Sb5ut1,Sb6ut1,
                 Sb1ut2, Sb2ut2,Sb3ut2,Sb4ut2, Sb5ut2,Sb6ut2,
                 Sb1fl, Sb2fl, Sb3fl, Sb4fl,Sb5fl,Sb6fl,semName;
+                LineChart lineCharts;
+                LinearLayout linearLayout;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
             semName = itemView.findViewById(R.id.semNamets);
+            linearLayout = itemView.findViewById(R.id.llchart);
 
 
             SN1 = itemView.findViewById(R.id.sN1ts);
@@ -105,6 +142,8 @@ public class SemAdapter extends FirebaseRecyclerAdapter<DataSemSubject,SemAdapte
             Sb4fl = itemView.findViewById(R.id.sb4flts);
             Sb5fl = itemView.findViewById(R.id.sb5flts);
             Sb6fl = itemView.findViewById(R.id.sb6flts);
+
+            lineCharts = itemView.findViewById(R.id.linecharts);
 
 
         }

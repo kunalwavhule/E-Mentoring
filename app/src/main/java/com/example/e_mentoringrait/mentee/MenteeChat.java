@@ -21,8 +21,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class MenteeChat extends AppCompatActivity {
     RecyclerView rvChat;
@@ -68,9 +70,9 @@ public class MenteeChat extends AppCompatActivity {
                 if (TextUtils.isEmpty(msg)) {
                     return;
                 }else {
-                    Date currentTime = Calendar.getInstance().getTime();
-                    String d1 = currentTime.toString();
-                    DataChat dataChat = new DataChat(msg, sname, d1);
+
+                    String currentTimes = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
+                    DataChat dataChat = new DataChat(msg, sname, currentTimes);
                     mChat.child(key).setValue(dataChat);
                     esmsg.setText("");
                 }

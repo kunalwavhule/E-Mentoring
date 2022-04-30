@@ -175,12 +175,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:text="Attendence"
+                    android:layout_toLeftOf="@+id/addAttendence"
                     android:background="@color/popster"
                     android:gravity="center"
-                    android:textSize="20sp"
-                    android:layout_toLeftOf="@+id/addAttendence"
+                    android:text="Attendence"
                     android:textColor="@color/white"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

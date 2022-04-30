@@ -6,7 +6,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/popster"
+        android:background="@color/skyblue"
         android:gravity="center"
         android:id="@+id/semNamets"
         android:textColor="@color/white" />
@@ -17,6 +17,7 @@
         android:layout_margin="20dp"
         android:background="@drawable/edit_background"
         android:gravity="center"
+        android:id="@+id/llchart"
         android:orientation="vertical">
 
         <LinearLayout
@@ -30,6 +31,7 @@
                 android:layout_height="50dp"
                 android:layout_weight="3"
                 android:gravity="center"
+                android:text="Subject Name"
                 android:textSize="15dp" />
 
             <TextView
@@ -310,6 +312,18 @@
 
 
     </LinearLayout>
+
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/linecharts"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="50dp" >
+
+    </com.github.mikephil.charting.charts.LineChart>
+
 
 
 </LinearLayout>

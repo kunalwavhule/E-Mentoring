@@ -498,13 +498,81 @@
                     android:layout_height="1dp"
                     android:background="@color/popster" />
 
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/popster"
+                    android:gravity="center"
+                    android:text="Grades"
+                    android:textColor="@color/white" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvmmsem"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/popster"
+                    android:gravity="center"
+                    android:text="Attendence"
+                    android:textColor="@color/white" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvmmattend"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/popster"
+                    android:gravity="center"
+                    android:text="Account Section"
+                    android:textColor="@color/white" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvmmfees"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/popster"
+                    android:gravity="center"
+                    android:text="Extra Ciriculam"
+                    android:textColor="@color/white" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvmmextrac"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/popster"
+                    android:gravity="center"
+                    android:text="Placement"
+                    android:textColor="@color/white" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvmmplacement"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
                 <com.github.mikephil.charting.charts.LineChart
                     android:id="@+id/linechart"
                     android:layout_width="match_parent"
                     android:layout_height="500dp"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="50dp"
-                    android:layout_marginRight="50dp" />
+                    android:layout_marginRight="50dp" >
+
+                </com.github.mikephil.charting.charts.LineChart>
 
 
             </LinearLayout>
